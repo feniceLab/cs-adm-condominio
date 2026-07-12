@@ -1,0 +1,15 @@
+# Acervo bruto do Drive (pesado, gitignored, só na VPS quando for o caso)
+acervo/
+# Segredos (NUNCA versionar)
+login.txt
+*login*.txt
+ssl/
+.env
+.env.*
+# Mídia pesada gerada
+assets/videos/
+node_modules/
+.DS_Store
+brand-analise/
+*.backup-*.json
+scratchpad/

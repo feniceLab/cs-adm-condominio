@@ -1,0 +1,53 @@
+{
+  "_doc": "Fonte da verdade do painel CS Administradora (padrão Fenice). Nada de conteúdo chumbado no HTML: texto, cor, fonte e imagem vêm daqui.",
+  "marca": {
+    "nome": "CS Administradora",
+    "nome_completo": "Carlos Silva · Administradora de Condomínios",
+    "slug": "csadm",
+    "dominio": "csadm.fenicelab.com.br",
+    "segmento": "Administração de condomínios / Síndico profissional",
+    "responsavel": "Carlos Silva",
+    "papel": "Síndico Profissional",
+    "conceito": "CS · prédio · gestão"
+  },
+  "contato": {
+    "instagram": "@carlossilvaadm",
+    "whatsapp": "(47) 99992-5130",
+    "email": "PENDENTE",
+    "regiao": "Blumenau e região / SC"
+  },
+  "paleta": {
+    "_nota": "Amostrada por pixel do logo oficial (CS-Logo.ai / Carlos Blue@4x / gradiente).",
+    "preto": "#0F1B24",
+    "preto_superficie": "#12212B",
+    "preto_card": "#16262F",
+    "azul": "#38B8D8",
+    "azul_claro": "#7FD3E8",
+    "azul_ocean": "#0070B8",
+    "branco": "#F8F8F8",
+    "cinza_texto": "#9FB3BE"
+  },
+  "tipografia": {
+    "_nota": "O lettering da logo é um desenho de marca e nunca deve ser reconstruído com fonte. Fonte própria da marca (escolha Adelia 12/07): Questrial (display, equivalente livre ao Century Gothic do logo) + Inter (corpo). Ambas OFL, self-hosted.",
+    "display": "Questrial",
+    "corpo": "Inter",
+    "oficial_a_confirmar": "Century Gothic (aparência do wordmark)"
+  },
+  "abas": [
+    "Brand Book",
+    "Design System",
+    "Galeria",
+    "Drive da Marca"
+  ],
+  "assets": {
+    "simbolo_azul": "assets/brand/logo/cs-simbolo-azul.png",
+    "simbolo_branco": "assets/brand/logo/cs-simbolo-branco.png",
+    "simbolo_preto": "assets/brand/logo/cs-simbolo-preto.png",
+    "avatar": "assets/brand/logo/cs-avatar.jpg",
+    "wordmark": "assets/brand/logo/cs-wordmark-azul.png"
+  },
+  "observacoes": [
+    "⚠️ A arte do logo traz o wordmark grafado 'ADMINSTRADORA' (falta um I); o arquivo solto ADMINISTRADORA@4x está correto. Avaliar corrigir no vetor antes de estampar.",
+    "E-mail comercial: PENDENTE (confirmar com o cliente)."
+  ]
+}

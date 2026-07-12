@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CS Administradora · Galeria</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Questrial&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{--preto:#0F1B24;--superficie:#12212B;--card:#16262F;--borda:#263945;--azul:#38B8D8;--azul-claro:#7FD3E8;--ocean:#0070B8;--branco:#F8F8F8;--cinza:#9FB3BE;--fd:'Questrial',sans-serif;--fc:'Inter',sans-serif}
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:var(--preto);color:var(--branco);font-family:var(--fc);line-height:1.6;font-size:15px}
+  .wrap{max-width:1080px;margin:0 auto;padding:56px 36px 100px}
+  .eyebrow{font-family:var(--fd);font-size:12px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--azul);margin-bottom:10px}
+  h1.big{font-family:var(--fd);font-size:clamp(36px,6vw,60px);font-weight:800;line-height:1;letter-spacing:-1px;margin-bottom:14px}
+  .lead{font-size:17px;color:var(--cinza);max-width:640px}
+  .filters{display:flex;flex-wrap:wrap;gap:10px;margin:34px 0}
+  .chip{font-family:var(--fd);font-size:12.5px;font-weight:600;padding:9px 16px;border-radius:20px;border:1px solid var(--borda);background:var(--card);color:var(--cinza);cursor:pointer;transition:.15s}
+  .chip.active,.chip:hover{background:var(--azul);color:var(--preto);border-color:var(--azul)}
+  .grid{columns:3;column-gap:16px}
+  @media(max-width:820px){.grid{columns:2}}
+  @media(max-width:520px){.grid{columns:1}}
+  .item{break-inside:avoid;margin-bottom:16px;border-radius:12px;overflow:hidden;border:1px solid var(--borda);background:var(--card);cursor:pointer;position:relative;transition:.16s}
+  .item:hover{border-color:var(--azul);transform:translateY(-2px)}
+  .item img{width:100%;display:block}
+  .item .cap{position:absolute;left:0;right:0;bottom:0;padding:26px 14px 12px;font-family:var(--fd);font-size:13px;font-weight:600;background:linear-gradient(transparent,rgba(0,0,0,.85));opacity:0;transition:.16s}
+  .item:hover .cap{opacity:1}
+  .item .cap .lg{color:var(--azul);font-weight:800;margin-right:6px}
+  .count{color:var(--cinza);font-size:13px;margin-bottom:10px}
+  .lb{position:fixed;inset:0;background:rgba(4,10,15,.94);display:none;align-items:center;justify-content:center;z-index:100;padding:30px}
+  .lb.open{display:flex}
+  .lb img{max-width:90vw;max-height:78vh;border-radius:12px;box-shadow:0 20px 80px rgba(0,0,0,.7)}
+  .lb .info{position:absolute;bottom:26px;left:0;right:0;text-align:center;font-family:var(--fd);font-weight:600;font-size:15px}
+  .lb .info .lg{color:var(--azul);font-weight:800}
+  .lb .x{position:absolute;top:22px;right:26px;width:44px;height:44px;border-radius:50%;background:var(--card);border:1px solid var(--borda);color:#fff;font-size:22px;cursor:pointer;display:flex;align-items:center;justify-content:center}
+  .lb .nav{position:absolute;top:50%;transform:translateY(-50%);width:52px;height:52px;border-radius:50%;background:rgba(22,38,47,.85);border:1px solid var(--borda);color:#fff;font-size:24px;cursor:pointer;display:flex;align-items:center;justify-content:center}
+  .lb .prev{left:20px}.lb .next{right:20px}
+  #empty{color:var(--cinza);padding:40px 0}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="eyebrow">Galeria</div>
+  <h1 class="big">Peças da marca</h1>
+  <p class="lead">Os criativos e o ensaio da CS Administradora: fotos e peças prontas pra compartilhar. Clique pra ampliar.</p>
+  <div class="filters" id="filters"></div>
+  <div class="count" id="count"></div>
+  <div class="grid" id="grid"></div>
+  <div id="empty" style="display:none">Nenhuma peça nesta categoria ainda.</div>
+</div>
+
+<div class="lb" id="lb">
+  <button class="x" id="x">✕</button>
+  <button class="nav prev" id="prev">‹</button>
+  <img id="lbimg" src="" alt="">
+  <button class="nav next" id="next">›</button>
+  <div class="info" id="lbinfo"></div>
+</div>
+
+<script>
+let PECAS=[], CATS=[], filtro='todos', view=[], idx=0;
+const grid=document.getElementById('grid'), filters=document.getElementById('filters'),
+      count=document.getElementById('count'), empty=document.getElementById('empty'),
+      lb=document.getElementById('lb'), lbimg=document.getElementById('lbimg'), lbinfo=document.getElementById('lbinfo');
+
+fetch('../data/galeria.json').then(r=>r.json()).then(d=>{
+  PECAS=d.pecas||[]; CATS=d.categorias||[];
+  const chips=[{id:'todos',label:'Todos'}].concat(CATS);
+  filters.innerHTML=chips.map(c=>`<span class="chip${c.id==='todos'?' active':''}" data-cat="${c.id}">${c.label}</span>`).join('');
+  filters.addEventListener('click',e=>{const c=e.target.closest('.chip');if(!c)return;
+    filtro=c.dataset.cat; filters.querySelectorAll('.chip').forEach(x=>x.classList.toggle('active',x===c)); render();});
+  render();
+}).catch(()=>{empty.style.display='block';empty.textContent='Não consegui carregar o catálogo.';});
+
+function render(){
+  view = filtro==='todos'?PECAS:PECAS.filter(p=>p.cat===filtro);
+  count.textContent = view.length+' peça'+(view.length!==1?'s':'');
+  empty.style.display = view.length? 'none':'block';
+  grid.innerHTML = view.map((p,i)=>`
+    <div class="item" data-i="${i}">
+      <img src="../${p.src}" alt="${p.nome}" loading="lazy">
+      <div class="cap"><span class="lg">CS</span>${p.nome}</div>
+    </div>`).join('');
+  grid.querySelectorAll('.item').forEach(el=>el.addEventListener('click',()=>open(+el.dataset.i)));
+}
+function open(i){idx=i;show();lb.classList.add('open');}
+function show(){const p=view[idx];lbimg.src='../'+p.src;lbinfo.innerHTML=`<span class="lg">CS Administradora</span> · ${p.nome} · ${idx+1}/${view.length}`;}
+document.getElementById('x').onclick=()=>lb.classList.remove('open');
+document.getElementById('prev').onclick=()=>{idx=(idx-1+view.length)%view.length;show();};
+document.getElementById('next').onclick=()=>{idx=(idx+1)%view.length;show();};
+lb.addEventListener('click',e=>{if(e.target===lb)lb.classList.remove('open');});
+document.addEventListener('keydown',e=>{if(!lb.classList.contains('open'))return;
+  if(e.key==='Escape')lb.classList.remove('open');
+  if(e.key==='ArrowLeft')document.getElementById('prev').click();
+  if(e.key==='ArrowRight')document.getElementById('next').click();});
+</script>
+</body>
+</html>

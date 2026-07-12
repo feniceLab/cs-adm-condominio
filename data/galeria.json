@@ -1,0 +1,230 @@
+{
+ "_doc": "Galeria curada CS (ensaio + peças). Fonte: assets/drive.",
+ "categorias": [
+  {
+   "id": "ensaio",
+   "label": "Ensaio"
+  },
+  {
+   "id": "pecas",
+   "label": "Peças"
+  }
+ ],
+ "pecas": [
+  {
+   "cat": "ensaio",
+   "nome": "Ensaio Carlos Silva",
+   "src": "assets/drive/ensaio/ensaio-001.jpg"
+  },
+  {
+   "cat": "ensaio",
+   "nome": "Ensaio Carlos Silva",
+   "src": "assets/drive/ensaio/ensaio-002.jpg"
+  },
+  {
+   "cat": "ensaio",
+   "nome": "Ensaio Carlos Silva",
+   "src": "assets/drive/ensaio/ensaio-003.jpg"
+  },
+  {
+   "cat": "ensaio",
+   "nome": "Ensaio Carlos Silva",
+   "src": "assets/drive/ensaio/ensaio-004.jpg"
+  },
+  {
+   "cat": "ensaio",
+   "nome": "Ensaio Carlos Silva",
+   "src": "assets/drive/ensaio/ensaio-005.jpg"
+  },
+  {
+   "cat": "ensaio",
+   "nome": "Ensaio Carlos Silva",
+   "src": "assets/drive/ensaio/ensaio-006.jpg"
+  },
+  {
+   "cat": "ensaio",
+   "nome": "Ensaio Carlos Silva",
+   "src": "assets/drive/ensaio/ensaio-007.jpg"
+  },
+  {
+   "cat": "ensaio",
+   "nome": "Ensaio Carlos Silva",
+   "src": "assets/drive/ensaio/ensaio-008.jpg"
+  },
+  {
+   "cat": "ensaio",
+   "nome": "Ensaio Carlos Silva",
+   "src": "assets/drive/ensaio/ensaio-009.jpg"
+  },
+  {
+   "cat": "ensaio",
+   "nome": "Ensaio Carlos Silva",
+   "src": "assets/drive/ensaio/ensaio-010.jpg"
+  },
+  {
+   "cat": "ensaio",
+   "nome": "Ensaio Carlos Silva",
+   "src": "assets/drive/ensaio/ensaio-011.jpg"
+  },
+  {
+   "cat": "ensaio",
+   "nome": "Ensaio Carlos Silva",
+   "src": "assets/drive/ensaio/ensaio-012.jpg"
+  },
+  {
+   "cat": "ensaio",
+   "nome": "Ensaio Carlos Silva",
+   "src": "assets/drive/ensaio/ensaio-013.jpg"
+  },
+  {
+   "cat": "ensaio",
+   "nome": "Ensaio Carlos Silva",
+   "src": "assets/drive/ensaio/ensaio-014.jpg"
+  },
+  {
+   "cat": "ensaio",
+   "nome": "Ensaio Carlos Silva",
+   "src": "assets/drive/ensaio/ensaio-015.jpg"
+  },
+  {
+   "cat": "ensaio",
+   "nome": "Ensaio Carlos Silva",
+   "src": "assets/drive/ensaio/ensaio-016.jpg"
+  },
+  {
+   "cat": "ensaio",
+   "nome": "Ensaio Carlos Silva",
+   "src": "assets/drive/ensaio/ensaio-017.jpg"
+  },
+  {
+   "cat": "ensaio",
+   "nome": "Ensaio Carlos Silva",
+   "src": "assets/drive/ensaio/ensaio-018.jpg"
+  },
+  {
+   "cat": "ensaio",
+   "nome": "Ensaio Carlos Silva",
+   "src": "assets/drive/ensaio/ensaio-019.jpg"
+  },
+  {
+   "cat": "ensaio",
+   "nome": "Ensaio Carlos Silva",
+   "src": "assets/drive/ensaio/ensaio-020.jpg"
+  },
+  {
+   "cat": "ensaio",
+   "nome": "Ensaio Carlos Silva",
+   "src": "assets/drive/ensaio/ensaio-021.jpg"
+  },
+  {
+   "cat": "ensaio",
+   "nome": "Ensaio Carlos Silva",
+   "src": "assets/drive/ensaio/ensaio-022.jpg"
+  },
+  {
+   "cat": "ensaio",
+   "nome": "Ensaio Carlos Silva",
+   "src": "assets/drive/ensaio/ensaio-023.jpg"
+  },
+  {
+   "cat": "ensaio",
+   "nome": "Ensaio Carlos Silva",
+   "src": "assets/drive/ensaio/ensaio-024.jpg"
+  },
+  {
+   "cat": "ensaio",
+   "nome": "Ensaio Carlos Silva",
+   "src": "assets/drive/ensaio/ensaio-025.jpg"
+  },
+  {
+   "cat": "ensaio",
+   "nome": "Ensaio Carlos Silva",
+   "src": "assets/drive/ensaio/ensaio-026.jpg"
+  },
+  {
+   "cat": "ensaio",
+   "nome": "Ensaio Carlos Silva",
+   "src": "assets/drive/ensaio/ensaio-027.jpg"
+  },
+  {
+   "cat": "ensaio",
+   "nome": "Ensaio Carlos Silva",
+   "src": "assets/drive/ensaio/ensaio-028.jpg"
+  },
+  {
+   "cat": "ensaio",
+   "nome": "Ensaio Carlos Silva",
+   "src": "assets/drive/ensaio/ensaio-029.jpg"
+  },
+  {
+   "cat": "ensaio",
+   "nome": "Ensaio Carlos Silva",
+   "src": "assets/drive/ensaio/ensaio-030.jpg"
+  },
+  {
+   "cat": "ensaio",
+   "nome": "Ensaio Carlos Silva",
+   "src": "assets/drive/ensaio/ensaio-031.jpg"
+  },
+  {
+   "cat": "ensaio",
+   "nome": "Ensaio Carlos Silva",
+   "src": "assets/drive/ensaio/ensaio-032.jpg"
+  },
+  {
+   "cat": "ensaio",
+   "nome": "Ensaio Carlos Silva",
+   "src": "assets/drive/ensaio/ensaio-033.jpg"
+  },
+  {
+   "cat": "pecas",
+   "nome": "Peça de campanha",
+   "src": "assets/drive/pecas/pecas-001.jpg"
+  },
+  {
+   "cat": "pecas",
+   "nome": "Peça de campanha",
+   "src": "assets/drive/pecas/pecas-002.jpg"
+  },
+  {
+   "cat": "pecas",
+   "nome": "Peça de campanha",
+   "src": "assets/drive/pecas/pecas-003.jpg"
+  },
+  {
+   "cat": "pecas",
+   "nome": "Peça de campanha",
+   "src": "assets/drive/pecas/pecas-004.jpg"
+  },
+  {
+   "cat": "pecas",
+   "nome": "Peça de campanha",
+   "src": "assets/drive/pecas/pecas-005.jpg"
+  },
+  {
+   "cat": "pecas",
+   "nome": "Peça de campanha",
+   "src": "assets/drive/pecas/pecas-006.jpg"
+  },
+  {
+   "cat": "pecas",
+   "nome": "Peça de campanha",
+   "src": "assets/drive/pecas/pecas-007.jpg"
+  },
+  {
+   "cat": "pecas",
+   "nome": "Peça de campanha",
+   "src": "assets/drive/pecas/pecas-008.jpg"
+  },
+  {
+   "cat": "pecas",
+   "nome": "Peça de campanha",
+   "src": "assets/drive/pecas/pecas-009.jpg"
+  },
+  {
+   "cat": "pecas",
+   "nome": "Peça de campanha",
+   "src": "assets/drive/pecas/pecas-010.jpg"
+  }
+ ]
+}

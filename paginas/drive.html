@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CS Administradora · Drive da Marca</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Questrial&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{--preto:#0F1B24;--superficie:#12212B;--card:#16262F;--borda:#263945;--azul:#38B8D8;--ocean:#0070B8;--branco:#F8F8F8;--cinza:#9FB3BE;--fd:'Questrial',sans-serif;--fc:'Inter',sans-serif}
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:var(--preto);color:var(--branco);font-family:var(--fc);line-height:1.6;font-size:15px}
+  .wrap{max-width:1160px;margin:0 auto;padding:56px 36px 100px}
+  .eyebrow{font-family:var(--fd);font-size:12px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--azul);margin-bottom:10px}
+  h1.big{font-family:var(--fd);font-size:clamp(34px,6vw,56px);font-weight:800;line-height:1;letter-spacing:-1px;margin-bottom:14px}
+  .lead{font-size:16px;color:var(--cinza);max-width:720px}
+  .nota{margin-top:18px;background:var(--card);border:1px solid var(--borda);border-left:3px solid var(--ocean);border-radius:10px;padding:14px 18px;font-size:13.5px;color:#C7D4DC}
+  .nota b{color:var(--azul)}
+  .filters{display:flex;flex-wrap:wrap;gap:10px;margin:30px 0 6px}
+  .chip{font-family:var(--fd);font-size:12.5px;font-weight:600;padding:9px 16px;border-radius:20px;border:1px solid var(--borda);background:var(--card);color:var(--cinza);cursor:pointer;transition:.15s}
+  .chip.active,.chip:hover{background:var(--azul);color:var(--preto);border-color:var(--azul)}
+  .grp{margin-top:38px}
+  .grp h2{font-family:var(--fd);font-size:16px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#fff;display:flex;align-items:center;gap:10px;margin-bottom:4px}
+  .grp h2 .n{font-size:12px;font-weight:600;color:var(--preto);background:var(--azul);border-radius:20px;padding:2px 10px}
+  .grp .sub{font-size:13px;color:var(--cinza);margin-bottom:16px}
+  .grid{columns:4;column-gap:12px}
+  @media(max-width:980px){.grid{columns:3}}
+  @media(max-width:680px){.grid{columns:2}}
+  .item{break-inside:avoid;margin-bottom:12px;border-radius:10px;overflow:hidden;border:1px solid var(--borda);background:var(--card);cursor:pointer;position:relative;transition:.16s}
+  .item:hover{border-color:var(--azul);transform:translateY(-2px)}
+  .item img{width:100%;display:block}
+  .item .og{position:absolute;left:0;right:0;bottom:0;padding:18px 10px 8px;font-size:10.5px;color:#dfe8ee;background:linear-gradient(transparent,rgba(0,0,0,.82));opacity:0;transition:.16s;font-family:var(--fc);word-break:break-word}
+  .item:hover .og{opacity:1}
+  .lb{position:fixed;inset:0;background:rgba(4,10,15,.94);display:none;align-items:center;justify-content:center;z-index:100;padding:30px}
+  .lb.open{display:flex}
+  .lb img{max-width:90vw;max-height:78vh;border-radius:12px;box-shadow:0 20px 80px rgba(0,0,0,.7)}
+  .lb .info{position:absolute;bottom:24px;left:0;right:0;text-align:center;font-family:var(--fc);font-size:13px;color:var(--cinza);padding:0 20px}
+  .lb .x{position:absolute;top:22px;right:26px;width:44px;height:44px;border-radius:50%;background:var(--card);border:1px solid var(--borda);color:#fff;font-size:22px;cursor:pointer;display:flex;align-items:center;justify-content:center}
+  .lb .nav{position:absolute;top:50%;transform:translateY(-50%);width:52px;height:52px;border-radius:50%;background:rgba(22,38,47,.85);border:1px solid var(--borda);color:#fff;font-size:24px;cursor:pointer;display:flex;align-items:center;justify-content:center}
+  .lb .prev{left:20px}.lb .next{right:20px}
+  #erro{color:var(--cinza);padding:40px 0}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="eyebrow">Drive da Marca</div>
+  <h1 class="big">Tudo que temos</h1>
+  <p class="lead">Todo o material que baixamos do Drive da CS, organizado por origem. É daqui que a gente separa o que fica (vai pra Galeria e pro material da marca) e o que sai.</p>
+  <div class="nota"><b>Nota:</b> aqui estão as <b id="ncount">64</b> imagens do acervo, otimizadas pra web. Os vídeos brutos, projetos de Premiere/After Effects e os arquivos .PSD/.AI originais ficam guardados no acervo local (pesados demais pra web); posso subir qualquer um específico quando você pedir.</p>
+
+  <div class="filters" id="filters"></div>
+  <div id="conteudo"></div>
+  <div id="erro" style="display:none"></div>
+</div>
+
+<div class="lb" id="lb">
+  <button class="x" id="x">✕</button>
+  <button class="nav prev" id="prev">‹</button>
+  <img id="lbimg" src="" alt="">
+  <button class="nav next" id="next">›</button>
+  <div class="info" id="lbinfo"></div>
+</div>
+
+<script>
+let ALL=[], filtro='todos', view=[], idx=0;
+const filters=document.getElementById('filters'), conteudo=document.getElementById('conteudo'),
+      lb=document.getElementById('lb'), lbimg=document.getElementById('lbimg'), lbinfo=document.getElementById('lbinfo');
+
+fetch('../data/drive.json').then(r=>r.json()).then(d=>{
+  ALL=(d.pecas||[]).map(p=>({...p,src:p.src.replace(/^\.\.\//,'')}));
+  document.getElementById('ncount').textContent=d.total||ALL.length;
+  const buckets=[]; const seen={};
+  ALL.forEach(p=>{ if(!seen[p.bucket]){seen[p.bucket]=1;buckets.push({id:p.bucket,label:p.bucket_label});} });
+  const chips=[{id:'todos',label:'Tudo'}].concat(buckets);
+  filters.innerHTML=chips.map(c=>`<span class="chip${c.id==='todos'?' active':''}" data-cat="${c.id}">${c.label}</span>`).join('');
+  filters.addEventListener('click',e=>{const c=e.target.closest('.chip');if(!c)return;
+    filtro=c.dataset.cat; filters.querySelectorAll('.chip').forEach(x=>x.classList.toggle('active',x===c)); render();});
+  render();
+}).catch(()=>{const el=document.getElementById('erro');el.style.display='block';el.textContent='Não consegui carregar o catálogo.';});
+
+function render(){
+  view = filtro==='todos'?ALL:ALL.filter(p=>p.bucket===filtro);
+  const grupos={}; const ordem=[];
+  view.forEach(p=>{ if(!grupos[p.bucket]){grupos[p.bucket]={label:p.bucket_label,itens:[]};ordem.push(p.bucket);} grupos[p.bucket].itens.push(p); });
+  conteudo.innerHTML = ordem.map(b=>{
+    const g=grupos[b];
+    const cards=g.itens.map(p=>{
+      const gi=view.indexOf(p);
+      return `<div class="item" data-i="${gi}"><img src="../${p.src}" alt="" loading="lazy"><div class="og">${p.origem||''}</div></div>`;
+    }).join('');
+    return `<div class="grp"><h2>${g.label} <span class="n">${g.itens.length}</span></h2><div class="grid">${cards}</div></div>`;
+  }).join('');
+  conteudo.querySelectorAll('.item').forEach(el=>el.addEventListener('click',()=>open(+el.dataset.i)));
+}
+function open(i){idx=i;show();lb.classList.add('open');}
+function show(){const p=view[idx];lbimg.src='../'+p.src;lbinfo.textContent=(p.origem||'')+'  ·  '+(idx+1)+'/'+view.length;}
+document.getElementById('x').onclick=()=>lb.classList.remove('open');
+document.getElementById('prev').onclick=()=>{idx=(idx-1+view.length)%view.length;show();};
+document.getElementById('next').onclick=()=>{idx=(idx+1)%view.length;show();};
+lb.addEventListener('click',e=>{if(e.target===lb)lb.classList.remove('open');});
+document.addEventListener('keydown',e=>{if(!lb.classList.contains('open'))return;
+  if(e.key==='Escape')lb.classList.remove('open');
+  if(e.key==='ArrowLeft')document.getElementById('prev').click();
+  if(e.key==='ArrowRight')document.getElementById('next').click();});
+</script>
+</body>
+</html>

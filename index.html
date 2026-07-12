@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CS Administradora · Painel da Marca</title>
+<link rel="icon" type="image/png" href="assets/brand/logo/cs-simbolo-azul.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Questrial&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --preto:#0F1B24; --superficie:#12212B; --card:#16262F; --borda:#263945;
+    --azul:#38B8D8; --azul-claro:#7FD3E8; --ocean:#0070B8;
+    --branco:#F8F8F8; --cinza:#9FB3BE;
+    --font-display:'Questrial',sans-serif; --font-corpo:'Inter',sans-serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html,body{height:100%}
+  body{background:var(--preto);color:var(--branco);font-family:var(--font-corpo);font-size:15px;line-height:1.7;display:flex;flex-direction:column;min-height:100vh}
+
+  .topbar{position:sticky;top:0;z-index:300}
+  header{background:var(--superficie);border-bottom:2px solid var(--azul);padding:12px 26px;display:flex;align-items:center;gap:14px}
+  .logo-badge{width:50px;height:50px;flex-shrink:0;border-radius:50%;overflow:hidden;background:#0b1620;box-shadow:0 0 26px rgba(56,184,216,.30);display:grid;place-items:center}
+  .logo-badge img{width:78%;height:78%;object-fit:contain;display:block}
+  .header-info h1{font-family:var(--font-display);font-size:22px;font-weight:800;color:var(--branco);letter-spacing:-.5px;line-height:1}
+  .header-info h1 b{color:var(--azul);font-weight:800}
+  .header-info span{font-size:10.5px;color:var(--cinza);letter-spacing:3px;text-transform:uppercase}
+  .aff-badge{margin-left:auto;background:var(--azul);color:var(--preto);font-size:11px;font-weight:700;font-family:var(--font-display);padding:6px 14px;border-radius:20px;letter-spacing:.5px;text-transform:uppercase}
+
+  nav{background:var(--superficie);border-bottom:1px solid var(--borda);display:flex;padding:0 18px;gap:2px;overflow-x:auto}
+  nav::-webkit-scrollbar{height:0}
+  nav button{background:none;border:none;color:var(--cinza);font-family:var(--font-display);font-size:12.5px;font-weight:600;padding:14px 18px;cursor:pointer;border-bottom:2px solid transparent;letter-spacing:.04em;text-transform:uppercase;transition:.18s;white-space:nowrap;display:flex;align-items:center;gap:7px}
+  nav button.active{color:var(--azul);border-bottom-color:var(--azul)}
+  nav button:hover:not(.active){color:#eee}
+  nav .tag{font-size:8px;font-weight:800;letter-spacing:.05em;background:var(--ocean);color:#fff;padding:2px 5px;border-radius:4px}
+
+  main{flex:1;display:flex;flex-direction:column}
+  .tab-panel{display:none;flex:1;flex-direction:column}
+  .tab-panel.active{display:flex}
+  .embed-wrap{flex:1;position:relative;background:var(--preto);min-height:calc(100vh - 96px)}
+  .embed-wrap iframe{position:absolute;inset:0;width:100%;height:100%;border:none}
+</style>
+</head>
+<body>
+  <div class="topbar">
+    <header>
+      <div class="logo-badge"><img src="assets/brand/logo/cs-simbolo-azul.png" alt="CS Administradora"></div>
+      <div class="header-info">
+        <h1>CS<b> Administradora</b></h1>
+        <span>Painel da Marca</span>
+      </div>
+      <div class="aff-badge">Síndico Profissional</div>
+    </header>
+    <nav id="nav">
+      <button class="active" data-tab="brandbook">Brand Book</button>
+      <button data-tab="design-system">Design System</button>
+      <button data-tab="galeria">Galeria</button>
+      <button data-tab="drive">Drive da Marca</button>
+    </nav>
+  </div>
+
+  <main>
+    <div class="tab-panel active" data-panel="brandbook"><div class="embed-wrap"><iframe data-src="paginas/brandbook.html" title="Brand Book"></iframe></div></div>
+    <div class="tab-panel" data-panel="design-system"><div class="embed-wrap"><iframe data-src="paginas/design-system.html" title="Design System"></iframe></div></div>
+    <div class="tab-panel" data-panel="galeria"><div class="embed-wrap"><iframe data-src="paginas/galeria.html" title="Galeria"></iframe></div></div>
+    <div class="tab-panel" data-panel="drive"><div class="embed-wrap"><iframe data-src="paginas/drive.html" title="Drive da Marca"></iframe></div></div>
+  </main>
+
+  <script>
+    const nav=document.getElementById('nav');
+    const panels=document.querySelectorAll('.tab-panel');
+    function loadFrame(name){
+      const p=document.querySelector('.tab-panel[data-panel="'+name+'"]');
+      const f=p.querySelector('iframe');
+      if(f && !f.src && f.dataset.src) f.src=f.dataset.src;
+    }
+    function activate(name){
+      nav.querySelectorAll('button').forEach(b=>b.classList.toggle('active',b.dataset.tab===name));
+      panels.forEach(p=>p.classList.toggle('active',p.dataset.panel===name));
+      loadFrame(name);
+    }
+    nav.addEventListener('click',e=>{const b=e.target.closest('button');if(b)activate(b.dataset.tab);});
+    loadFrame('brandbook');
+  </script>
+</body>
+</html>

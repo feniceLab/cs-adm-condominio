@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CS · Modelos de Fonte</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Questrial&family=Inter:wght@400;500;600;700&family=Montserrat:wght@500;600;700;800&family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=Sora:wght@500;600;700;800&family=IBM+Plex+Sans:wght@400;500;600;700&family=Mulish:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{--preto:#0F1B24;--card:#16262F;--borda:#263945;--azul:#38B8D8;--ocean:#0070B8;--branco:#F8F8F8;--cinza:#9FB3BE}
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:var(--preto);color:var(--branco);font-family:'Inter',sans-serif;padding:48px 6vw 100px}
+  .head{max-width:900px;margin:0 auto 30px}
+  .eyebrow{font-family:'Montserrat';font-size:12px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--azul);margin-bottom:8px}
+  .head h1{font-family:'Montserrat';font-size:clamp(28px,5vw,44px);font-weight:800;letter-spacing:-1px;line-height:1.05}
+  .head p{color:var(--cinza);margin-top:12px;max-width:640px;font-size:15px}
+  .models{max-width:900px;margin:0 auto;display:flex;flex-direction:column;gap:26px}
+  .m{background:var(--card);border:1px solid var(--borda);border-radius:14px;overflow:hidden}
+  .m.rec{border-color:var(--azul);box-shadow:0 0 40px rgba(56,184,216,.14)}
+  .m .bar{display:flex;align-items:center;gap:12px;padding:16px 24px;border-bottom:1px solid var(--borda);background:#12212B}
+  .m .bar .tag{font-family:'Montserrat';font-size:11px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--preto);background:var(--azul);padding:4px 12px;border-radius:20px}
+  .m .bar .rectag{font-family:'Montserrat';font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--azul);border:1px solid var(--azul);padding:3px 10px;border-radius:20px;margin-left:auto}
+  .m .bar b{font-family:'Montserrat';font-weight:700;font-size:15px}
+  .m .bar span{color:var(--cinza);font-size:13px}
+  .m .body{padding:30px 24px 34px}
+  .brand{font-size:clamp(30px,5vw,52px);line-height:1;letter-spacing:-.5px;margin-bottom:6px}
+  .brand b{color:var(--azul)}
+  .tagline{font-size:clamp(20px,3vw,30px);font-style:italic;color:var(--azul);margin-bottom:22px;line-height:1.1}
+  .h2{font-size:clamp(20px,2.6vw,28px);line-height:1.15;margin:0 0 10px}
+  .lead{font-size:16px;line-height:1.7;color:#D5DEE4;max-width:600px}
+  .lead b{color:#fff}
+  .contact{margin-top:18px;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--cinza)}
+  .why{margin-top:20px;padding-top:16px;border-top:1px dashed var(--borda);font-size:13.5px;color:#B7C6CE;line-height:1.6}
+  .why b{color:var(--azul)}
+</style>
+</head>
+<body>
+<div class="head">
+  <div class="eyebrow">CS · Pesquisa de fontes</div>
+  <h1>Três modelos de fonte pra CS</h1>
+  <p>Todos livres (licença aberta), self-hosted no nosso servidor, ou seja, viram fontes próprias da marca. Aplicados no conteúdo real da CS pra você comparar. Escolha um e eu troco em todo o painel.</p>
+</div>
+<div class="models" id="models"></div>
+
+<script>
+const MODELOS = [
+  {
+    tag:"Modelo 1", rec:true, nome:"Questrial + Inter",
+    sub:"Coerente com o logo",
+    display:"'Questrial', sans-serif", corpo:"'Inter', sans-serif", dw:400,
+    why:"<b>Por que:</b> o wordmark do seu logo é uma geométrica larga estilo Century Gothic, e a Questrial é a alternativa livre mais fiel a ela. Mantém a marca reconhecível e passa modernidade e limpeza, exatamente o que o mercado de gestão/imobiliário associa a profissionalismo. Inter no corpo garante leitura perfeita em tela."
+  },
+  {
+    tag:"Modelo 2", rec:false, nome:"Montserrat + Lora",
+    sub:"Autoridade + confiança",
+    display:"'Montserrat', sans-serif", corpo:"'Lora', serif", dw:800,
+    why:"<b>Por que:</b> Montserrat é a fonte mais citada no imobiliário por unir modernidade com autoridade. A Lora (serifada) no corpo puxa tradição e confiança, o código visual dos setores que lidam com dinheiro (jurídico, financeiro). Administradora cuida de dinheiro alheio e presta contas, então a serifa reforça seriedade."
+  },
+  {
+    tag:"Modelo 3", rec:false, nome:"Sora + IBM Plex Sans",
+    sub:"Gestão moderna",
+    display:"'Sora', sans-serif", corpo:"'IBM Plex Sans', sans-serif", dw:800,
+    why:"<b>Por que:</b> par premium com cara de plataforma de gestão séria. Sora é geométrica e sólida nos títulos; IBM Plex Sans é desenhada pra legibilidade em dados e telas. Passa 'empresa organizada e tecnológica', bom se a CS quiser posicionar a gestão como digital e moderna."
+  }
+];
+document.getElementById('models').innerHTML = MODELOS.map(m=>`
+  <div class="m${m.rec?' rec':''}">
+    <div class="bar">
+      <span class="tag">${m.tag}</span>
+      <b>${m.nome}</b><span>· ${m.sub}</span>
+      ${m.rec?'<span class="rectag">Recomendado</span>':''}
+    </div>
+    <div class="body">
+      <div class="brand" style="font-family:${m.display};font-weight:${m.dw}">CS <b>Administradora</b></div>
+      <div class="tagline" style="font-family:${m.display};font-weight:${Math.min(m.dw,600)}">Seu condomínio em boas mãos.</div>
+      <div class="h2" style="font-family:${m.display};font-weight:${m.dw}">Administração de condomínios com transparência total</div>
+      <p class="lead" style="font-family:${m.corpo}">Gestão financeira, assembleias, manutenção e <b>prestação de contas clara todo mês</b>. Carlos Silva, síndico profissional, cuida do patrimônio do seu condomínio com método e presença, sem burocracia e sem surpresa no caixa.</p>
+      <div class="contact" style="font-family:${m.corpo}">@carlossilvaadm · (47) 99992-5130</div>
+      <div class="why" style="font-family:${m.corpo}">${m.why}</div>
+    </div>
+  </div>`).join('');
+</script>
+</body>
+</html>

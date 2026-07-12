@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<title>Brand Book</title>
+<!--
+  MOLDE DATA-DRIVEN. NÃO EDITAR POR CLIENTE.
+  Renderiza data/brandbook.json (schema em templates/brandbook.schema.json).
+  Trocar o JSON troca o brand book inteiro. Nada de conteúdo chumbado aqui.
+-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link id="gfonts" rel="stylesheet" href="">
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  :root{
+    /* preenchido em runtime a partir de tema.cores; fallbacks abaixo */
+    --cafe:#2D2017; --marrom:#5B412C; --taupe:#A29382; --nude:#DBC6B6;
+    --branco:#FFFFFF; --acento:#9C7A2E; --nude-l:#F3ECE3; --taupe-l:#C9BBAB; --taupe-d:#6B5C4B;
+    --font-display:'Cormorant Garamond',Georgia,serif;
+    --font-body:'Public Sans',system-ui,sans-serif;
+    --fg-1:#2A2018;
+  }
+  body{font-family:var(--font-body);color:var(--fg-1);background:var(--cafe)}
+  img{display:block;max-width:100%}
+
+  /* HERO */
+  .ed-hero{position:relative;min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding:0 7vw;overflow:hidden}
+  .ed-hero .bg{position:absolute;inset:0;background:center/cover}
+  .ed-hero .bg::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(28,20,16,.55),rgba(28,20,16,.82))}
+  .ed-hero .inner{position:relative;max-width:1100px}
+  .ed-hero .crest{width:64px;opacity:.9;filter:brightness(0) invert(1);margin-bottom:28px}
+  .ed-hero h1{font-family:var(--font-display);font-weight:500;font-size:clamp(48px,11vw,168px);line-height:.92;color:rgba(255,255,255,.94);letter-spacing:.01em}
+  .ed-hero .script{font-family:var(--font-display);font-style:italic;font-weight:500;font-size:clamp(22px,3.4vw,40px);color:var(--nude);margin-top:18px}
+  .ed-hero .meta{margin-top:40px;font:500 11px/1.8 var(--font-body);letter-spacing:.28em;text-transform:uppercase;color:rgba(255,255,255,.6)}
+  .ed-hero .scroll{position:absolute;bottom:36px;left:7vw;font:500 10px/1 var(--font-body);letter-spacing:.3em;text-transform:uppercase;color:rgba(255,255,255,.5)}
+  .ed-hero.is-selo{align-items:center;text-align:center;background:#000}
+  .ed-hero.is-selo .selo{mix-blend-mode:screen}
+  .ed-hero.is-selo .inner{max-width:none;display:flex;flex-direction:column;align-items:center}
+  .ed-hero.is-selo .selo{width:min(64vw,460px);height:auto;display:block}
+  .ed-hero.is-selo .script{margin-top:6px}
+  .ed-hero.is-selo .meta{margin-top:28px}
+  .ed-hero.is-selo .scroll{left:50%;transform:translateX(-50%)}
+
+  /* SEÇÃO editorial full-bleed */
+  .ed-sec{position:relative;padding:clamp(60px,12vh,140px) 7vw;overflow:hidden}
+  .ed-sec .wrap{position:relative;max-width:1140px;margin:0 auto}
+  .ed-num{position:absolute;top:-10px;right:2vw;font-family:var(--font-display);font-weight:600;font-size:clamp(120px,22vw,320px);line-height:.8;opacity:.06;pointer-events:none}
+  .ed-label{font:600 11px/1 var(--font-body);letter-spacing:.3em;text-transform:uppercase;display:inline-flex;align-items:center;gap:14px}
+  .ed-label::before{content:'';width:38px;height:1.5px;background:currentColor}
+  .ed-title{font-family:var(--font-display);font-weight:500;font-size:clamp(34px,6vw,76px);line-height:1.04;margin:18px 0 26px;white-space:pre-line}
+  .ed-lead{font-size:clamp(17px,2.1vw,22px);line-height:1.65;font-weight:300;max-width:720px}
+  .ed-sec.split .wrap{display:grid;grid-template-columns:1.04fr 1fr;gap:clamp(28px,5vw,72px);align-items:center}
+  .ed-texto{position:relative;z-index:1}
+  .ed-foto{position:relative;z-index:1;border-radius:10px;overflow:hidden;aspect-ratio:4/5;box-shadow:0 34px 64px -34px rgba(0,0,0,.6)}
+  .ed-foto img{width:100%;height:100%;object-fit:cover;object-position:center 20%}
+  .ed-sec.foto-esq .ed-texto{order:2}.ed-sec.foto-esq .ed-foto{order:1}
+  @media(max-width:860px){.ed-sec.split .wrap{grid-template-columns:1fr;gap:28px}.ed-sec.split .ed-texto{order:1!important}.ed-sec.split .ed-foto{order:2!important;aspect-ratio:16/11}}
+  .ed-cols{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,5vw,72px);margin-top:44px}
+  .ed-cols h4{font-family:var(--font-display);font-weight:600;font-size:22px;margin-bottom:8px}
+  .ed-cols p{font-size:15px;line-height:1.7;font-weight:300}
+
+  /* temas */
+  .escuro{background:var(--cafe);color:rgba(255,255,255,.86)}
+  .escuro .ed-label{color:var(--taupe-l)}.escuro .ed-title,.escuro .ed-num{color:#fff}
+  .claro{background:var(--nude-l);color:var(--fg-1)}
+  .claro .ed-label{color:var(--taupe-d)}.claro .ed-title,.claro .ed-num{color:var(--cafe)}
+  .acento{background:var(--taupe);color:rgba(255,255,255,.92)}
+  .acento .ed-label{color:var(--cafe)}.acento .ed-title,.acento .ed-num{color:#fff}
+  .pattern{background:var(--cafe);color:#fff}
+  .pattern::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(45deg,rgba(255,255,255,.03) 0 2px,transparent 2px 22px)}
+  .pattern .wrap{z-index:1}
+  .pattern .ed-label{color:var(--taupe-l)}.pattern .ed-title,.pattern .ed-num{color:#fff}
+
+  /* paleta */
+  .paleta{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:14px;margin-top:44px}
+  .paleta .c{border-radius:8px;overflow:hidden;cursor:pointer;border:1px solid rgba(0,0,0,.06)}
+  .paleta .c .sw{height:110px}
+  .paleta .c .nm{padding:10px 12px;background:rgba(255,255,255,.06);font:500 12px var(--font-body)}
+  .paleta .c .nm .hx{font-family:ui-monospace,Menlo,monospace}
+  .paleta .c .nm .us{display:block;font-size:10px;opacity:.6;margin-top:2px}
+
+  /* marcas */
+  .marcas{display:grid;grid-template-columns:repeat(2,minmax(260px,1fr));gap:18px;margin-top:44px}
+  .marcas .m{border-radius:10px;min-height:190px;display:grid;place-items:center;padding:34px}
+  .marcas .m img{width:min(100%,420px);max-height:116px;object-fit:contain}
+  .marcas .m:last-child:nth-child(odd){grid-column:1/-1}
+  .marcas .m:last-child:nth-child(odd) img{width:150px;max-height:150px;border-radius:50%}
+
+  /* tipografia */
+  .typo{margin-top:40px}
+  .typo .big{font-family:var(--font-display);font-weight:500;font-size:clamp(48px,9vw,120px);line-height:.95;color:#fff}
+  .pattern .typo .big{color:#fff}
+  .typo .body-sample{font-family:var(--font-body);font-weight:300;font-size:18px;line-height:1.7;margin-top:24px;max-width:640px}
+
+  /* somos-nao / cards */
+  .grade-fotos{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:14px;margin-top:44px}
+  .grade-fotos div{border-radius:8px;overflow:hidden;aspect-ratio:3/4}
+  .grade-fotos img{width:100%;height:100%;object-fit:cover;object-position:center 22%}
+
+  /* templates */
+  .tpl-grupo{margin-top:40px}
+  .tpl-grupo .gnome{font:600 11px var(--font-body);letter-spacing:.22em;text-transform:uppercase;margin-bottom:16px;opacity:.85}
+  .tpl-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  .tpl-grid div{border-radius:8px;overflow:hidden;box-shadow:0 16px 36px -18px rgba(0,0,0,.5);background:#0f0f0f;display:flex;align-items:center;justify-content:center}
+  .tpl-grid.is-feed div{aspect-ratio:4/5}
+  .tpl-grid.is-story div{aspect-ratio:9/16}
+  .tpl-grid div img{width:100%;height:100%;object-fit:contain;display:block}
+
+  footer{padding:40px 7vw;background:#1C1410;color:rgba(255,255,255,.45);font:500 11px/1.6 var(--font-body);letter-spacing:.06em;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
+  footer a{color:var(--taupe-l);text-decoration:none}
+  #toast{position:fixed;bottom:26px;left:50%;transform:translateX(-50%) translateY(20px);background:var(--acento);color:#fff;font-weight:700;font-size:13px;padding:11px 22px;border-radius:30px;opacity:0;pointer-events:none;transition:.25s;z-index:50}
+  #toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+  #erro{padding:80px 7vw;color:#c0392b;font-family:var(--font-body)}
+  @media(max-width:760px){.ed-cols{grid-template-columns:1fr}.tpl-grid{grid-template-columns:1fr 1fr}.marcas{grid-template-columns:1fr}.marcas .m:last-child:nth-child(odd){grid-column:auto}}
+</style>
+</head>
+<body>
+<main id="app"><div id="erro" style="display:none"></div></main>
+<div id="toast"></div>
+
+<script>
+const esc = s => String(s==null?'':s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const fundo = f => ({escuro:'escuro',claro:'claro',acento:'acento',pattern:'pattern'}[f]||'escuro');
+
+function aplicarTema(t){
+  if(!t) return;
+  const r = document.documentElement.style;
+  const c = t.cores||{};
+  for(const k in c) r.setProperty('--'+k, c[k]);
+  // derivados úteis se não vierem no JSON
+  if(c.nude && !c['nude-l']) r.setProperty('--nude-l', c.branco||'#F3ECE3');
+  if(c.taupe && !c['taupe-l']) r.setProperty('--taupe-l', c.taupe);
+  if(c.cafe) r.setProperty('--fg-1', c.cafe);
+  const f = t.fonts||{};
+  if(f.display) r.setProperty('--font-display', `'${f.display.web||f.display.oficial}',Georgia,serif`);
+  if(f.body) r.setProperty('--font-body', `'${f.body.web||f.body.oficial}',system-ui,sans-serif`);
+  const families=[]; if(f.display&&f.display.googleFont)families.push(f.display.googleFont); if(f.body&&f.body.googleFont)families.push(f.body.googleFont);
+  if(families.length) document.getElementById('gfonts').href='https://fonts.googleapis.com/css2?'+families.map(x=>'family='+x).join('&')+'&display=swap';
+}
+
+function hero(m){
+  m=m||{};
+  if(m.hero_modo==='selo' && m.hero_bg){
+    return `<header class="ed-hero is-selo">
+    <div class="inner">
+      <img class="selo" src="${esc(m.hero_bg)}" alt="${esc(m.nome||'')}">
+      ${m.tagline?`<div class="script">${esc(m.tagline)}</div>`:''}
+      <div class="meta">Brand Book${m.segmento?' · '+esc(m.segmento):''}${m.ano?' · '+esc(m.ano):''}</div>
+    </div>
+    <div class="scroll">↓ role para conhecer a marca</div>
+  </header>`;
+  }
+  return `<header class="ed-hero">
+    <div class="bg" style="background-image:url('${esc(m.hero_bg||'')}')"></div>
+    <div class="inner">
+      ${m.logo_simbolo?`<img class="crest" src="${esc(m.logo_simbolo)}" alt="">`:''}
+      <h1>${esc(m.nome||'').replace(/ /,'<br>')}</h1>
+      ${m.tagline?`<div class="script">${esc(m.tagline)}</div>`:''}
+      <div class="meta">Brand Book${m.segmento?' · '+esc(m.segmento):''}${m.ano?' · '+esc(m.ano):''}</div>
+    </div>
+    <div class="scroll">↓ role para conhecer a marca</div>
+  </header>`;
+}
+
+const blocos = {
+  'texto': s => `<p class="ed-lead">${esc(s.lead)}</p>`,
+  'texto-foto': s => '', // tratado no wrapper (split)
+  'duas-colunas': s => (s.lead?`<p class="ed-lead">${esc(s.lead)}</p>`:'') +
+    `<div class="ed-cols">${(s.colunas||[]).map(c=>`<div><h4>${esc(c.titulo)}</h4><p>${esc(c.texto)}</p></div>`).join('')}</div>`,
+  'cards': s => (s.lead?`<p class="ed-lead">${esc(s.lead)}</p>`:'') +
+    `<div class="ed-cols" style="grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:28px">${(s.cards||[]).map(c=>`<div><h4>${esc(c.titulo)}</h4><p>${esc(c.texto)}</p></div>`).join('')}</div>`,
+  'somos-nao': s => (s.lead?`<p class="ed-lead">${esc(s.lead)}</p>`:'') +
+    `<div class="ed-cols" style="grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:28px">
+      <div><h4>${esc((s.esquerda||{}).titulo)}</h4><p>${((s.esquerda||{}).itens||[]).map(esc).join(' · ')}</p></div>
+      <div><h4>${esc((s.direita||{}).titulo)}</h4><p>${((s.direita||{}).itens||[]).map(esc).join(' · ')}</p></div>
+    </div>` + (s.grade_fotos?`<div class="grade-fotos">${s.grade_fotos.map(f=>`<div><img loading="lazy" src="${esc(f)}" alt=""></div>`).join('')}</div>`:''),
+  'paleta': s => (s.lead?`<p class="ed-lead">${esc(s.lead)}</p>`:'') +
+    `<div class="paleta">${(s.cores||[]).map(c=>`<div class="c" data-hex="${esc(c.hex)}"><div class="sw" style="background:${esc(c.hex)}"></div><div class="nm"><span class="hx">${esc(c.hex)}</span><span class="us">${esc(c.uso||'')}</span></div></div>`).join('')}</div>`,
+  'tipografia': s => `<div class="typo"><div class="big">${esc(s.display_nome||'Aa')}</div><p class="body-sample">${esc(s.amostra||'')}</p></div>`,
+  'marcas': s => `<div class="marcas">${(s.logos||[]).map(l=>`<div class="m" style="background:${esc(l.bg||'#fff')}"><img src="${esc(l.src)}" alt=""></div>`).join('')}</div>`,
+  'templates': s => (s.lead?`<p class="ed-lead">${esc(s.lead)}</p>`:'') +
+    (s.grupos||[]).map(g=>`<div class="tpl-grupo"><div class="gnome">${esc(g.nome)}</div><div class="tpl-grid ${/stor/i.test(g.nome)?'is-story':'is-feed'}">${(g.imgs||[]).map(i=>`<div><img loading="lazy" src="${esc(i)}?v=2" alt=""></div>`).join('')}</div></div>`).join('')
+};
+
+function secao(s, i){
+  const n = String(i+1).padStart(2,'0');
+  const cls = fundo(s.fundo);
+  const head = `<div class="ed-num">${n}</div><span class="ed-label">${esc(s.label)}</span><h2 class="ed-title">${esc(s.titulo)}</h2>`;
+  if(s.tipo==='texto-foto'){
+    const lado = s.fotoLado==='esq'?'foto-esq':'foto-dir';
+    return `<section class="ed-sec ${cls} split ${lado}"><div class="ed-num">${n}</div><div class="wrap">
+      <div class="ed-texto"><span class="ed-label">${esc(s.label)}</span><h2 class="ed-title">${esc(s.titulo)}</h2><p class="ed-lead">${esc(s.lead)}</p></div>
+      <div class="ed-foto"><img loading="lazy" src="${esc(s.foto)}" alt=""></div>
+    </div></section>`;
+  }
+  const corpo = (blocos[s.tipo]||blocos['texto'])(s);
+  return `<section class="ed-sec ${cls}"><div class="wrap">${head}${corpo}</div></section>`;
+}
+
+function footer(m){
+  m=m||{};
+  return `<footer>
+    <span>${esc(m.nome||'')}${m.fundadoras&&m.fundadoras.length?' · '+m.fundadoras.map(esc).join(' & '):''}</span>
+    <span>${m.designer_identidade?'Identidade: '+esc(m.designer_identidade)+(m.ano?', '+esc(m.ano):'')+' · ':''}Sistema digital por <a href="https://fenicelab.com.br">Fenice Lab</a></span>
+  </footer>`;
+}
+
+fetch('../data/brandbook.json',{cache:'no-store'})
+  .then(r=>{ if(!r.ok) throw new Error('brandbook.json não encontrado ('+r.status+')'); return r.json(); })
+  .then(bb=>{
+    aplicarTema(bb.tema);
+    document.title = (bb.marca&&bb.marca.nome?bb.marca.nome+' · ':'')+'Brand Book';
+    const html = hero(bb.marca) + (bb.secoes||[]).map(secao).join('') + footer(bb.marca);
+    document.getElementById('app').innerHTML = html;
+    // copiar hex
+    const toast=document.getElementById('toast');let tt;
+    document.querySelectorAll('.paleta .c[data-hex]').forEach(c=>c.addEventListener('click',()=>{
+      const h=c.dataset.hex; navigator.clipboard&&navigator.clipboard.writeText(h);
+      toast.textContent=h+' copiado'; toast.classList.add('show'); clearTimeout(tt); tt=setTimeout(()=>toast.classList.remove('show'),1400);
+    }));
+  })
+  .catch(e=>{ const el=document.getElementById('erro'); el.style.display='block'; el.textContent='Erro ao carregar o Brand Book: '+e.message; });
+</script>
+</body>
+</html>

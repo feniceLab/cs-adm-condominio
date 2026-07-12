@@ -1,0 +1,193 @@
+{
+  "_doc": "Design System data-driven da CS Administradora. Herda cor/fonte/logo do brandbook.json (fonte única). Este arquivo traz só os tokens operacionais + as seções. Trocar aqui troca o DS. Zero travessão.",
+  "tokens": {
+    "estilo_componente": "reto",
+    "estilo_botao": "sentence",
+    "densidade": "confortavel",
+    "raio": { "sm": "6px", "md": "10px", "lg": "14px", "pill": "999px" },
+    "sombra": {
+      "sm": "0 1px 3px rgba(0,0,0,.5)",
+      "md": "0 12px 34px -14px rgba(0,0,0,.75)",
+      "lg": "0 0 44px rgba(56,184,216,.24)"
+    },
+    "gradientes": [
+      { "nome": "CS", "css": "linear-gradient(135deg,#38B8D8,#0070B8)" },
+      { "nome": "Ocean", "css": "linear-gradient(135deg,#0070B8,#0A5C90)" },
+      { "nome": "Noite", "css": "linear-gradient(180deg,#16262F,#0F1B24)" }
+    ],
+    "paleta_estendida": [
+      { "hex": "#38B8D8", "oficial": true },
+      { "hex": "#7FD3E8", "oficial": true },
+      { "hex": "#0070B8", "oficial": true },
+      { "hex": "#0F1B24", "oficial": true },
+      { "hex": "#12212B" },
+      { "hex": "#263945" },
+      { "hex": "#9FB3BE" },
+      { "hex": "#F8F8F8", "oficial": true }
+    ],
+    "escala": {
+      "mobile": { "H1": "32px", "corpo": "15px", "margem": "20px", "colunas": "1" },
+      "ipad": { "H1": "48px", "corpo": "16px", "margem": "48px", "colunas": "2" },
+      "desktop": { "H1": "72px", "corpo": "17px", "margem": "7vw", "colunas": "3" }
+    }
+  },
+  "secoes": [
+    {
+      "tipo": "conceito",
+      "label": "Fundamentos",
+      "titulo": "O prédio e o monograma.",
+      "sub": "A identidade da CS é sólida e clara: um símbolo que une as iniciais de Carlos Silva à silhueta de um edifício, e um azul confiável que diz gestão profissional em um instante.",
+      "colunas": [
+        { "titulo": "O monograma CS", "texto": "As letras C e S entrelaçadas com a silhueta de um prédio: a assinatura de quem administra o patrimônio de quem confia. Direto, corporativo, inconfundível." },
+        { "titulo": "O azul sobre o escuro", "texto": "O azul transmite confiança, competência e transparência; o grafite dá seriedade e contraste. Juntos, dão cara de gestão moderna, longe do burocrático." }
+      ]
+    },
+    {
+      "tipo": "paleta",
+      "titulo": "Cores",
+      "sub": "As cores oficiais da marca (marcadas com estrela) e os tons de apoio de interface. Clique num swatch pra copiar o HEX.",
+      "fonte_tokens": "tokens.paleta_estendida"
+    },
+    {
+      "tipo": "gradientes",
+      "titulo": "Gradientes",
+      "sub": "Usados com parcimônia, em destaques e fundos de peça. O azul puxa pro ocean; o grafite vira noite.",
+      "fonte_tokens": "tokens.gradientes"
+    },
+    {
+      "tipo": "tipografia",
+      "titulo": "Tipografia",
+      "sub": "Questrial no display e nos títulos (geométrica, com presença); Inter no corpo (limpa e legível). O azul entra no destaque.",
+      "amostras": [
+        { "tag": "Display · Questrial 700", "texto": "Seu condomínio em boas mãos.", "estilo": "font-family:'Questrial';font-weight:700;font-size:clamp(30px,5vw,56px);line-height:1;color:#fff" },
+        { "tag": "Título · Questrial 600", "texto": "Administração de condomínios com transparência", "estilo": "font-family:'Questrial';font-weight:600;font-size:clamp(22px,3vw,32px);color:#fff" },
+        { "tag": "Corpo · Inter 400", "texto": "Gestão financeira, assembleias, manutenção e prestação de contas, tudo organizado e no prazo.", "estilo": "font-family:'Inter';font-weight:400;font-size:17px;line-height:1.6;color:#CFD8DE" },
+        { "tag": "Destaque · Inter 700", "texto": "prestação de contas clara todo mês", "estilo": "font-family:'Inter';font-weight:700;font-size:19px;color:#38B8D8" },
+        { "tag": "Legenda · Inter 500", "texto": "@carlossilvaadm · (47) 99992-5130", "estilo": "font-family:'Inter';font-weight:500;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#9FB3BE" }
+      ]
+    },
+    {
+      "tipo": "sombras",
+      "titulo": "Elevação e halo",
+      "sub": "Sombra escura pra dar profundidade sobre o grafite; o halo azul (sombra lg) é o toque da marca, reservado pra elementos em destaque."
+    },
+    {
+      "tipo": "tokens-responsivos",
+      "titulo": "Escala responsiva",
+      "sub": "Como o título, o corpo e a margem respiram em cada breakpoint.",
+      "fonte_tokens": "tokens.escala"
+    },
+    {
+      "tipo": "logos",
+      "label": "Marca",
+      "titulo": "Versões da logo.",
+      "sub": "Sempre a logo real, completa. A negativa (branca) é a principal, sobre fundo escuro. A positiva (azul) entra sobre claro. O selo é pro avatar e o app.",
+      "itens": [
+        { "src": "../assets/brand/logo/cs-simbolo-branco.png", "bg": "#0F1B24", "cap": "Principal · negativa" },
+        { "src": "../assets/brand/logo/cs-simbolo-azul.png", "bg": "#EAF6FB", "cap": "Positiva · azul" },
+        { "src": "../assets/brand/logo/cs-avatar.jpg", "bg": "#16262F", "cap": "Selo · avatar", "redondo": true },
+        { "src": "../assets/brand/logo/cs-simbolo-gradiente.png", "bg": "#0F1B24", "cap": "Símbolo · gradiente" }
+      ]
+    },
+    {
+      "tipo": "tamanhos",
+      "titulo": "Tamanho mínimo.",
+      "sub": "Abaixo de 28px de altura o prédio perde definição. Respeite o mínimo em qualquer aplicação digital.",
+      "logo": "../assets/brand/logo/cs-simbolo-azul.png",
+      "alturas": [64, 40, 28],
+      "minimo": "28px"
+    },
+    {
+      "tipo": "area-protecao",
+      "titulo": "Área de proteção.",
+      "sub": "Deixe respiro em volta da logo: no mínimo a largura do C de folga em todos os lados. Nada de texto ou elemento invadindo esse espaço.",
+      "logo": "../assets/brand/logo/cs-simbolo-azul.png"
+    },
+    {
+      "tipo": "usos-incorretos",
+      "titulo": "Usos incorretos.",
+      "sub": "A logo é uma só. O que nunca fazer:",
+      "logo": "../assets/brand/logo/cs-simbolo-azul.png",
+      "itens": [
+        { "lbl": "Não distorcer", "transform": "scaleX(1.6)" },
+        { "lbl": "Não girar", "transform": "rotate(12deg)" },
+        { "lbl": "Não recolorir", "filtro": "hue-rotate(90deg) saturate(2.5)" },
+        { "lbl": "Não sobre baixo contraste", "bg": "#0070B8" }
+      ]
+    },
+    {
+      "tipo": "botoes",
+      "label": "Componentes",
+      "titulo": "Botões.",
+      "sub": "O primário é azul com texto grafite (o CTA principal). O fantasma e o link são pra ações secundárias. Todos com foco de teclado visível."
+    },
+    {
+      "tipo": "campos",
+      "titulo": "Campos e formulário.",
+      "sub": "Fundo escuro, borda sutil, foco azul. O estado de erro fala claro, sem susto."
+    },
+    {
+      "tipo": "cards",
+      "titulo": "Cards.",
+      "sub": "Blocos de conteúdo pra serviço, prova e contato. Reto, escuro, com o azul pontuando.",
+      "exemplos": [
+        { "thumb": true, "lbl": "Serviço", "titulo": "Gestão financeira", "texto": "Boletos, prestação de contas e reservas sob controle, com relatório claro todo mês.", "badge": "Transparente" },
+        { "lbl": "Prova", "titulo": "Síndico profissional", "texto": "Experiência real na administração de condomínios, com respaldo e presença.", "cta": "Falar no WhatsApp" },
+        { "lbl": "Confiança", "titulo": "Prestação de contas", "texto": "Cada real explicado. O condômino acompanha e entende pra onde vai o dinheiro.", "rodape": "Gestão sem surpresa" }
+      ]
+    },
+    {
+      "tipo": "badges",
+      "titulo": "Selos e badges.",
+      "sub": "Etiquetas curtas pra reforçar confiança e destaque.",
+      "itens": [
+        { "txt": "Transparente", "variante": "amarelo" },
+        { "txt": "Síndico Profissional", "variante": "line" },
+        { "txt": "Prestação de contas", "variante": "escuro" },
+        { "txt": "Blumenau · SC", "variante": "amarelo" }
+      ]
+    },
+    {
+      "tipo": "newsletter",
+      "titulo": "Captura de contato.",
+      "sub": "O bloco de conversão: o condomínio deixa o contato, um CTA azul direto, e a confirmação.",
+      "cta": "Quero uma proposta"
+    },
+    {
+      "tipo": "icones",
+      "titulo": "Ícones.",
+      "sub": "Traço fino, cantos vivos, mesma família visual do prédio. Sempre com rótulo acessível, nunca emoji solto."
+    },
+    {
+      "tipo": "dispositivos",
+      "label": "Aplicações",
+      "titulo": "Nos dispositivos.",
+      "sub": "A marca na tela: negativa no escuro, positiva no claro, símbolo no ícone do app.",
+      "logo_claro": "../assets/brand/logo/cs-simbolo-branco.png",
+      "logo_escuro": "../assets/brand/logo/cs-simbolo-azul.png",
+      "simbolo": "../assets/brand/logo/cs-simbolo-branco.png"
+    },
+    {
+      "tipo": "post-templates",
+      "titulo": "Templates de post.",
+      "sub": "Base escura, azul no destaque, logo sempre presente. Feed 1080x1080, story 1080x1920.",
+      "logo_negativa": "../assets/brand/logo/cs-simbolo-branco.png",
+      "simbolo": "../assets/brand/logo/cs-simbolo-gradiente.png"
+    },
+    {
+      "tipo": "imagem",
+      "titulo": "Fotografia.",
+      "sub": "Carlos em campo, prédios reais, gestão em ação. Luz natural, tom profissional. Nada de banco de imagem frio nem prédio genérico de outro país.",
+      "img": "../assets/drive/ensaio/ensaio-001.jpg"
+    },
+    {
+      "tipo": "conceito",
+      "titulo": "Acessibilidade.",
+      "sub": "O azul é a favor da leitura, use a favor de todo mundo.",
+      "colunas": [
+        { "titulo": "Contraste", "texto": "Azul #38B8D8 sobre grafite #0F1B24 passa folgado no mínimo AA. Evite azul claro sobre branco puro (contraste fraco). Texto de apoio em cinza claro #9FB3BE, nunca mais escuro que isso." },
+        { "titulo": "Foco e teclado", "texto": "Todo botão e campo tem anel de foco azul visível. Alvos de toque com no mínimo 44px. Placeholder nunca substitui o rótulo do campo." }
+      ]
+    }
+  ]
+}

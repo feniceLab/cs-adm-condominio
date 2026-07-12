@@ -1,0 +1,454 @@
+{
+ "_doc": "Catálogo Drive da Marca CS. Tudo que baixamos do Drive, pra triar o que fica/sai.",
+ "total": 64,
+ "pecas": [
+  {
+   "bucket": "ensaio",
+   "bucket_label": "Ensaio fotográfico (tratadas)",
+   "src": "../assets/drive/ensaio/ensaio-001.jpg",
+   "w": 0,
+   "h": 0
+  },
+  {
+   "bucket": "ensaio",
+   "bucket_label": "Ensaio fotográfico (tratadas)",
+   "src": "../assets/drive/ensaio/ensaio-002.jpg",
+   "w": 0,
+   "h": 0
+  },
+  {
+   "bucket": "ensaio",
+   "bucket_label": "Ensaio fotográfico (tratadas)",
+   "src": "../assets/drive/ensaio/ensaio-003.jpg",
+   "w": 0,
+   "h": 0
+  },
+  {
+   "bucket": "ensaio",
+   "bucket_label": "Ensaio fotográfico (tratadas)",
+   "src": "../assets/drive/ensaio/ensaio-004.jpg",
+   "w": 0,
+   "h": 0
+  },
+  {
+   "bucket": "ensaio",
+   "bucket_label": "Ensaio fotográfico (tratadas)",
+   "src": "../assets/drive/ensaio/ensaio-005.jpg",
+   "w": 0,
+   "h": 0
+  },
+  {
+   "bucket": "ensaio",
+   "bucket_label": "Ensaio fotográfico (tratadas)",
+   "src": "../assets/drive/ensaio/ensaio-006.jpg",
+   "w": 0,
+   "h": 0
+  },
+  {
+   "bucket": "ensaio",
+   "bucket_label": "Ensaio fotográfico (tratadas)",
+   "src": "../assets/drive/ensaio/ensaio-007.jpg",
+   "w": 0,
+   "h": 0
+  },
+  {
+   "bucket": "ensaio",
+   "bucket_label": "Ensaio fotográfico (tratadas)",
+   "src": "../assets/drive/ensaio/ensaio-008.jpg",
+   "w": 0,
+   "h": 0
+  },
+  {
+   "bucket": "ensaio",
+   "bucket_label": "Ensaio fotográfico (tratadas)",
+   "src": "../assets/drive/ensaio/ensaio-009.jpg",
+   "w": 0,
+   "h": 0
+  },
+  {
+   "bucket": "ensaio",
+   "bucket_label": "Ensaio fotográfico (tratadas)",
+   "src": "../assets/drive/ensaio/ensaio-010.jpg",
+   "w": 0,
+   "h": 0
+  },
+  {
+   "bucket": "ensaio",
+   "bucket_label": "Ensaio fotográfico (tratadas)",
+   "src": "../assets/drive/ensaio/ensaio-011.jpg",
+   "w": 0,
+   "h": 0
+  },
+  {
+   "bucket": "ensaio",
+   "bucket_label": "Ensaio fotográfico (tratadas)",
+   "src": "../assets/drive/ensaio/ensaio-012.jpg",
+   "w": 0,
+   "h": 0
+  },
+  {
+   "bucket": "ensaio",
+   "bucket_label": "Ensaio fotográfico (tratadas)",
+   "src": "../assets/drive/ensaio/ensaio-013.jpg",
+   "w": 0,
+   "h": 0
+  },
+  {
+   "bucket": "ensaio",
+   "bucket_label": "Ensaio fotográfico (tratadas)",
+   "src": "../assets/drive/ensaio/ensaio-014.jpg",
+   "w": 0,
+   "h": 0
+  },
+  {
+   "bucket": "ensaio",
+   "bucket_label": "Ensaio fotográfico (tratadas)",
+   "src": "../assets/drive/ensaio/ensaio-015.jpg",
+   "w": 0,
+   "h": 0
+  },
+  {
+   "bucket": "ensaio",
+   "bucket_label": "Ensaio fotográfico (tratadas)",
+   "src": "../assets/drive/ensaio/ensaio-016.jpg",
+   "w": 0,
+   "h": 0
+  },
+  {
+   "bucket": "ensaio",
+   "bucket_label": "Ensaio fotográfico (tratadas)",
+   "src": "../assets/drive/ensaio/ensaio-017.jpg",
+   "w": 0,
+   "h": 0
+  },
+  {
+   "bucket": "ensaio",
+   "bucket_label": "Ensaio fotográfico (tratadas)",
+   "src": "../assets/drive/ensaio/ensaio-018.jpg",
+   "w": 0,
+   "h": 0
+  },
+  {
+   "bucket": "ensaio",
+   "bucket_label": "Ensaio fotográfico (tratadas)",
+   "src": "../assets/drive/ensaio/ensaio-019.jpg",
+   "w": 0,
+   "h": 0
+  },
+  {
+   "bucket": "ensaio",
+   "bucket_label": "Ensaio fotográfico (tratadas)",
+   "src": "../assets/drive/ensaio/ensaio-020.jpg",
+   "w": 0,
+   "h": 0
+  },
+  {
+   "bucket": "ensaio",
+   "bucket_label": "Ensaio fotográfico (tratadas)",
+   "src": "../assets/drive/ensaio/ensaio-021.jpg",
+   "w": 0,
+   "h": 0
+  },
+  {
+   "bucket": "ensaio",
+   "bucket_label": "Ensaio fotográfico (tratadas)",
+   "src": "../assets/drive/ensaio/ensaio-022.jpg",
+   "w": 0,
+   "h": 0
+  },
+  {
+   "bucket": "ensaio",
+   "bucket_label": "Ensaio fotográfico (tratadas)",
+   "src": "../assets/drive/ensaio/ensaio-023.jpg",
+   "w": 0,
+   "h": 0
+  },
+  {
+   "bucket": "ensaio",
+   "bucket_label": "Ensaio fotográfico (tratadas)",
+   "src": "../assets/drive/ensaio/ensaio-024.jpg",
+   "w": 0,
+   "h": 0
+  },
+  {
+   "bucket": "ensaio",
+   "bucket_label": "Ensaio fotográfico (tratadas)",
+   "src": "../assets/drive/ensaio/ensaio-025.jpg",
+   "w": 0,
+   "h": 0
+  },
+  {
+   "bucket": "ensaio",
+   "bucket_label": "Ensaio fotográfico (tratadas)",
+   "src": "../assets/drive/ensaio/ensaio-026.jpg",
+   "w": 0,
+   "h": 0
+  },
+  {
+   "bucket": "ensaio",
+   "bucket_label": "Ensaio fotográfico (tratadas)",
+   "src": "../assets/drive/ensaio/ensaio-027.jpg",
+   "w": 0,
+   "h": 0
+  },
+  {
+   "bucket": "ensaio",
+   "bucket_label": "Ensaio fotográfico (tratadas)",
+   "src": "../assets/drive/ensaio/ensaio-028.jpg",
+   "w": 0,
+   "h": 0
+  },
+  {
+   "bucket": "ensaio",
+   "bucket_label": "Ensaio fotográfico (tratadas)",
+   "src": "../assets/drive/ensaio/ensaio-029.jpg",
+   "w": 0,
+   "h": 0
+  },
+  {
+   "bucket": "ensaio",
+   "bucket_label": "Ensaio fotográfico (tratadas)",
+   "src": "../assets/drive/ensaio/ensaio-030.jpg",
+   "w": 0,
+   "h": 0
+  },
+  {
+   "bucket": "ensaio",
+   "bucket_label": "Ensaio fotográfico (tratadas)",
+   "src": "../assets/drive/ensaio/ensaio-031.jpg",
+   "w": 0,
+   "h": 0
+  },
+  {
+   "bucket": "ensaio",
+   "bucket_label": "Ensaio fotográfico (tratadas)",
+   "src": "../assets/drive/ensaio/ensaio-032.jpg",
+   "w": 0,
+   "h": 0
+  },
+  {
+   "bucket": "ensaio",
+   "bucket_label": "Ensaio fotográfico (tratadas)",
+   "src": "../assets/drive/ensaio/ensaio-033.jpg",
+   "w": 0,
+   "h": 0
+  },
+  {
+   "bucket": "pecas",
+   "bucket_label": "Peças / carrossel",
+   "src": "../assets/drive/pecas/pecas-001.jpg",
+   "w": 0,
+   "h": 0
+  },
+  {
+   "bucket": "pecas",
+   "bucket_label": "Peças / carrossel",
+   "src": "../assets/drive/pecas/pecas-002.jpg",
+   "w": 0,
+   "h": 0
+  },
+  {
+   "bucket": "pecas",
+   "bucket_label": "Peças / carrossel",
+   "src": "../assets/drive/pecas/pecas-003.jpg",
+   "w": 0,
+   "h": 0
+  },
+  {
+   "bucket": "pecas",
+   "bucket_label": "Peças / carrossel",
+   "src": "../assets/drive/pecas/pecas-004.jpg",
+   "w": 0,
+   "h": 0
+  },
+  {
+   "bucket": "pecas",
+   "bucket_label": "Peças / carrossel",
+   "src": "../assets/drive/pecas/pecas-005.jpg",
+   "w": 0,
+   "h": 0
+  },
+  {
+   "bucket": "pecas",
+   "bucket_label": "Peças / carrossel",
+   "src": "../assets/drive/pecas/pecas-006.jpg",
+   "w": 0,
+   "h": 0
+  },
+  {
+   "bucket": "pecas",
+   "bucket_label": "Peças / carrossel",
+   "src": "../assets/drive/pecas/pecas-007.jpg",
+   "w": 0,
+   "h": 0
+  },
+  {
+   "bucket": "pecas",
+   "bucket_label": "Peças / carrossel",
+   "src": "../assets/drive/pecas/pecas-008.jpg",
+   "w": 0,
+   "h": 0
+  },
+  {
+   "bucket": "pecas",
+   "bucket_label": "Peças / carrossel",
+   "src": "../assets/drive/pecas/pecas-009.jpg",
+   "w": 0,
+   "h": 0
+  },
+  {
+   "bucket": "pecas",
+   "bucket_label": "Peças / carrossel",
+   "src": "../assets/drive/pecas/pecas-010.jpg",
+   "w": 0,
+   "h": 0
+  },
+  {
+   "bucket": "marca",
+   "bucket_label": "Marca / social",
+   "src": "../assets/drive/marca/marca-001.jpg",
+   "w": 0,
+   "h": 0
+  },
+  {
+   "bucket": "marca",
+   "bucket_label": "Marca / social",
+   "src": "../assets/drive/marca/marca-002.jpg",
+   "w": 0,
+   "h": 0
+  },
+  {
+   "bucket": "marca",
+   "bucket_label": "Marca / social",
+   "src": "../assets/drive/marca/marca-003.jpg",
+   "w": 0,
+   "h": 0
+  },
+  {
+   "bucket": "marca",
+   "bucket_label": "Marca / social",
+   "src": "../assets/drive/marca/marca-004.jpg",
+   "w": 0,
+   "h": 0
+  },
+  {
+   "bucket": "marca",
+   "bucket_label": "Marca / social",
+   "src": "../assets/drive/marca/marca-005.jpg",
+   "w": 0,
+   "h": 0
+  },
+  {
+   "bucket": "marca",
+   "bucket_label": "Marca / social",
+   "src": "../assets/drive/marca/marca-006.jpg",
+   "w": 0,
+   "h": 0
+  },
+  {
+   "bucket": "marca",
+   "bucket_label": "Marca / social",
+   "src": "../assets/drive/marca/marca-007.jpg",
+   "w": 0,
+   "h": 0
+  },
+  {
+   "bucket": "marca",
+   "bucket_label": "Marca / social",
+   "src": "../assets/drive/marca/marca-008.jpg",
+   "w": 0,
+   "h": 0
+  },
+  {
+   "bucket": "marca",
+   "bucket_label": "Marca / social",
+   "src": "../assets/drive/marca/marca-009.jpg",
+   "w": 0,
+   "h": 0
+  },
+  {
+   "bucket": "marca",
+   "bucket_label": "Marca / social",
+   "src": "../assets/drive/marca/marca-010.jpg",
+   "w": 0,
+   "h": 0
+  },
+  {
+   "bucket": "marca",
+   "bucket_label": "Marca / social",
+   "src": "../assets/drive/marca/marca-011.jpg",
+   "w": 0,
+   "h": 0
+  },
+  {
+   "bucket": "marca",
+   "bucket_label": "Marca / social",
+   "src": "../assets/drive/marca/marca-012.jpg",
+   "w": 0,
+   "h": 0
+  },
+  {
+   "bucket": "marca",
+   "bucket_label": "Marca / social",
+   "src": "../assets/drive/marca/marca-013.jpg",
+   "w": 0,
+   "h": 0
+  },
+  {
+   "bucket": "marca",
+   "bucket_label": "Marca / social",
+   "src": "../assets/drive/marca/marca-014.jpg",
+   "w": 0,
+   "h": 0
+  },
+  {
+   "bucket": "marca",
+   "bucket_label": "Marca / social",
+   "src": "../assets/drive/marca/marca-015.jpg",
+   "w": 0,
+   "h": 0
+  },
+  {
+   "bucket": "marca",
+   "bucket_label": "Marca / social",
+   "src": "../assets/drive/marca/marca-016.jpg",
+   "w": 0,
+   "h": 0
+  },
+  {
+   "bucket": "marca",
+   "bucket_label": "Marca / social",
+   "src": "../assets/drive/marca/marca-017.jpg",
+   "w": 0,
+   "h": 0
+  },
+  {
+   "bucket": "marca",
+   "bucket_label": "Marca / social",
+   "src": "../assets/drive/marca/marca-018.jpg",
+   "w": 0,
+   "h": 0
+  },
+  {
+   "bucket": "marca",
+   "bucket_label": "Marca / social",
+   "src": "../assets/drive/marca/marca-019.jpg",
+   "w": 0,
+   "h": 0
+  },
+  {
+   "bucket": "marca",
+   "bucket_label": "Marca / social",
+   "src": "../assets/drive/marca/marca-020.jpg",
+   "w": 0,
+   "h": 0
+  },
+  {
+   "bucket": "marca",
+   "bucket_label": "Marca / social",
+   "src": "../assets/drive/marca/marca-021.jpg",
+   "w": 0,
+   "h": 0
+  }
+ ]
+}

@@ -1,0 +1,30 @@
+/* CS · Carlos Silva Administradora de Condomínios — Design Tokens (padrão Fenice, data-driven)
+   Cores amostradas por pixel do logo oficial (CS-Logo.ai / Carlos Blue@4x). */
+:root {
+  /* Base escura (grafite azulado da marca) */
+  --preto: #0F1B24;
+  --preto-superficie: #12212B;
+  --preto-card: #16262F;
+  --preto-borda: #263945;
+
+  /* Marca */
+  --azul: #38B8D8;        /* primária — o monograma CS, CTAs, destaques */
+  --azul-claro: #7FD3E8;  /* secundária — apoio, degradê */
+  --azul-ocean: #0070B8;  /* acento profundo — faixa, halo */
+
+  /* Neutros */
+  --branco: #F8F8F8;
+  --texto: #F8F8F8;
+  --texto-suave: #9FB3BE;
+
+  /* Degradê da marca */
+  --grad-cs: linear-gradient(135deg, #38B8D8 0%, #0070B8 100%);
+  --glow-azul: 0 0 40px rgba(56, 184, 216, .30);
+
+  /* Tipografia — fonte própria da marca (self-hosted, OFL). Questrial ecoa o Century Gothic do logo; Inter no corpo. */
+  --font-display: 'Questrial', system-ui, sans-serif;
+  --font-corpo: 'Inter', system-ui, sans-serif;
+
+  /* Raio de canto — Fenice usa cantos discretos; peças de post SEMPRE retas */
+  --raio-card: 12px;
+}

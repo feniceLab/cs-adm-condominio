@@ -1,0 +1,288 @@
+{
+  "_doc": "Brand Book data-driven da CS Administradora (modelo Fenice). Trocar este JSON troca o brand book inteiro. Seções 'consultoria' trazem recomendacao+porque+alternativas+status (interno, não aparece pro cliente); 'fato' vem da marca real. Status 'proposta' = ainda a validar com o cliente.",
+  "marca": {
+    "nome": "CS Administradora",
+    "tagline": "Seu condomínio em boas mãos.",
+    "segmento": "Administração de condomínios",
+    "ano": "2024",
+    "instagram": "@carlossilvaadm",
+    "whatsapp": "(47) 99992-5130",
+    "logo_branca": "../assets/brand/logo/cs-simbolo-branco.png",
+    "logo_preta": "../assets/brand/logo/cs-simbolo-azul.png",
+    "hero_bg": "../assets/brand/logo/cs-simbolo-branco.png",
+    "hero_modo": "selo"
+  },
+  "tema": {
+    "cores": {
+      "cafe": "#0F1B24",
+      "marrom": "#0A5C90",
+      "taupe": "#0070B8",
+      "nude": "#7FD3E8",
+      "nude-l": "#EAF6FB",
+      "taupe-l": "#38B8D8",
+      "taupe-d": "#0A5C90",
+      "preto": "#0F1B24",
+      "superficie": "#12212B",
+      "card": "#16262F",
+      "borda": "#263945",
+      "amarelo": "#38B8D8",
+      "oliva": "#7FD3E8",
+      "ambar": "#0070B8",
+      "cinza": "#9FB3BE",
+      "branco": "#F8F8F8",
+      "acento": "#38B8D8"
+    },
+    "fonts": {
+      "display": { "web": "Questrial", "oficial": "Questrial (equivalente livre ao Century Gothic do logo)", "googleFont": "Questrial" },
+      "body": { "web": "Inter", "oficial": "Inter", "googleFont": "Inter:wght@400;500;600;700" }
+    }
+  },
+  "secoes": [
+    {
+      "tipo": "texto-foto",
+      "fundo": "escuro",
+      "fotoLado": "dir",
+      "natureza": "consultoria",
+      "label": "Manifesto",
+      "titulo": "Administrar condomínio\né cuidar de gente.",
+      "lead": "Por trás de cada boleto tem uma família, um patrimônio e uma expectativa: que alguém competente esteja no controle. A CS existe pra tirar o peso das costas do condômino e do síndico voluntário, com gestão profissional, contas na mão e presença de verdade. Menos assembleia tensa, menos surpresa no caixa, mais tranquilidade pra quem mora.",
+      "foto": "../assets/drive/ensaio/ensaio-001.jpg",
+      "consultoria": {
+        "recomendacao": "Narrativa 'gestão profissional que traz tranquilidade', com foco no cuidado e na transparência",
+        "porque": "O setor de administradoras é percebido como burocrático e distante. O espaço livre é uma marca humana e presente, ancorada na figura do síndico profissional (Carlos Silva) que aparece e responde.",
+        "alternativas": ["Narrativa só técnica/financeira", "Narrativa focada em tecnologia/app"],
+        "status": "proposta"
+      }
+    },
+    {
+      "tipo": "texto",
+      "fundo": "claro",
+      "natureza": "consultoria",
+      "label": "Posicionamento",
+      "titulo": "O lugar da CS\nna vida do condomínio.",
+      "lead": "Para condomínios e síndicos que querem gestão séria sem virar reféns de burocracia, a CS Administradora é a administração conduzida por um síndico profissional que cuida das contas, das assembleias e do dia a dia com transparência total. Porque une competência técnica a uma presença próxima e humana, coisa rara num mercado frio e impessoal.",
+      "consultoria": {
+        "recomendacao": "Posicionamento 'gestão profissional + transparência + presença humana'",
+        "porque": "Diferencia da administradora tradicional (impessoal, só sistema) e do síndico voluntário sobrecarregado. Carlos como rosto da marca é o principal ativo de confiança.",
+        "alternativas": ["Posicionamento só em preço/economia", "Posicionamento em tecnologia/portal"],
+        "status": "proposta"
+      }
+    },
+    {
+      "tipo": "duas-colunas",
+      "fundo": "escuro",
+      "natureza": "consultoria",
+      "label": "Arquétipo",
+      "titulo": "O Guardião\ncom jeito de gente.",
+      "lead": "Toda marca forte se comporta como um personagem, e guia por ele cada imagem, palavra e gesto. A CS combina dois.",
+      "colunas": [
+        { "titulo": "🛡️ O Guardião", "texto": "Protege o patrimônio e a paz de quem mora. Voz firme, responsável e confiável: 'pode deixar que eu cuido'. É o arquétipo de quem assume o controle e responde pelo resultado." },
+        { "titulo": "🤝 O Próximo", "texto": "Fala com o condômino sem juridiquês nem frieza de sistema. Acessível, presente, de igual pra igual. É o arquétipo do síndico que atende o WhatsApp e explica a conta." }
+      ],
+      "consultoria": {
+        "recomendacao": "Guardião + Próximo (autoridade que cuida)",
+        "porque": "Casa com o fato: síndico profissional que aparece e responde. O Guardião entrega a confiança que o cuidado com patrimônio exige; o Próximo quebra a frieza do setor.",
+        "alternativas": ["Sábio + Guardião (autoridade técnica)", "Prestativo puro (risco de parecer submisso)"],
+        "status": "proposta"
+      }
+    },
+    {
+      "tipo": "cards",
+      "fundo": "acento",
+      "natureza": "consultoria",
+      "label": "Personalidade",
+      "titulo": "Se a CS\nfosse uma pessoa.",
+      "lead": "Cinco traços guiam cada decisão, do site à legenda de um story.",
+      "cards": [
+        { "titulo": "Confiável", "texto": "Prova antes de prometer. Transparência é o principal argumento." },
+        { "titulo": "Presente", "texto": "Responde, aparece, resolve. Não some depois do contrato." },
+        { "titulo": "Organizada", "texto": "Cada conta no lugar, cada prazo cumprido. Método, não improviso." },
+        { "titulo": "Clara", "texto": "Explica sem juridiquês. Se o condômino não entendeu, reescreve." },
+        { "titulo": "Firme", "texto": "Toma decisão difícil quando precisa, sempre a favor do condomínio." }
+      ],
+      "consultoria": {
+        "recomendacao": "Confiável · Presente · Organizada · Clara · Firme",
+        "porque": "Deriva do arquétipo Guardião+Próximo: traduz responsabilidade e método (confiável, organizada, firme) e a proximidade sem frieza (presente, clara).",
+        "alternativas": ["Trocar 'Firme' por 'Serena' se o tom for mais ameno"],
+        "status": "proposta"
+      }
+    },
+    {
+      "tipo": "duas-colunas",
+      "fundo": "claro",
+      "natureza": "fato",
+      "label": "O Conceito",
+      "titulo": "O prédio e o monograma.",
+      "lead": "A identidade da CS é sólida e direta, um símbolo que qualquer pessoa lê em um segundo.",
+      "colunas": [
+        { "titulo": "🏢 O prédio no símbolo", "texto": "As iniciais C e S se entrelaçam com a silhueta de um edifício. É a assinatura de quem administra o patrimônio de quem confia: o objeto do trabalho está dentro da própria marca." },
+        { "titulo": "🔵 O azul sobre o grafite", "texto": "O azul é a cor da confiança, da competência e da transparência; o grafite dá seriedade e contraste. Juntos, dão cara de gestão moderna, longe do carimbo e do papel." }
+      ],
+      "consultoria": {
+        "recomendacao": "Explicar o conceito monograma + prédio + azul (identidade já existente)",
+        "porque": "O símbolo e a paleta já estão definidos e são fortes. Aqui a consultoria EXPLICA por que funciona, não troca.",
+        "alternativas": [],
+        "status": "aprovado"
+      }
+    },
+    {
+      "tipo": "texto-foto",
+      "fundo": "acento",
+      "fotoLado": "esq",
+      "natureza": "consultoria",
+      "label": "Para quem",
+      "titulo": "Pra quem tem um\ncondomínio pra cuidar.",
+      "lead": "De um lado, condôminos e conselhos cansados de administradora impessoal, que querem contas claras e alguém que responda. Do outro, síndicos voluntários sobrecarregados, que precisam de um profissional pra assumir o operacional. A CS serve os dois com a mesma seriedade.",
+      "foto": "../assets/drive/ensaio/ensaio-010.jpg",
+      "consultoria": {
+        "recomendacao": "Assumir os 2 públicos: condomínio/conselho + síndico que quer terceirizar",
+        "porque": "Reflete o serviço real de um síndico profissional/administradora. CONFIRMAR com o cliente o recorte fino de cada público e os serviços exatos.",
+        "alternativas": ["Focar só em condomínios sem síndico profissional"],
+        "status": "proposta"
+      }
+    },
+    {
+      "tipo": "duas-colunas",
+      "fundo": "escuro",
+      "natureza": "consultoria",
+      "label": "Propósito",
+      "titulo": "Gestão séria,\ncondomínio tranquilo.",
+      "colunas": [
+        { "titulo": "Missão", "texto": "Administrar condomínios com transparência, método e presença, tirando o peso das costas de quem mora e protegendo o patrimônio de todos." },
+        { "titulo": "Visão", "texto": "Ser a administradora de condomínios mais confiável e próxima da região, reconhecida por prestação de contas clara e por resolver de verdade." },
+        { "titulo": "Valores", "texto": "Transparência · Responsabilidade · Presença · Organização · Respeito ao condômino." }
+      ],
+      "consultoria": {
+        "recomendacao": "Validar missão/visão/valores com o Carlos",
+        "porque": "Missão/visão são propriedade do dono da marca; redigimos uma proposta a partir dos fatos, mas precisa da confirmação do cliente.",
+        "alternativas": [],
+        "status": "proposta"
+      }
+    },
+    {
+      "tipo": "somos-nao",
+      "fundo": "claro",
+      "natureza": "consultoria",
+      "label": "Tom de voz",
+      "titulo": "Como a CS fala.",
+      "lead": "Firme e humana. Explica sem juridiquês, prova sem arrogância, tranquiliza sem enrolar. A voz de quem assume o controle e presta contas.",
+      "esquerda": {
+        "titulo": "Somos",
+        "itens": ["Claros e diretos", "Firmes e responsáveis", "Transparentes (mostramos as contas)", "Próximos e presentes", "Sem juridiquês"]
+      },
+      "direita": {
+        "titulo": "Não somos",
+        "itens": ["Burocráticos e frios", "Vagos sobre dinheiro", "Distantes ou automáticos", "Arrogantes ou técnicos demais", "Enrolados ou omissos"]
+      },
+      "consultoria": {
+        "recomendacao": "Tom 'firme e humano' (autoridade sem frieza)",
+        "porque": "Coerente com Guardião+Próximo e com o traço 'presente'. Diferencia do institucional frio das administradoras tradicionais.",
+        "alternativas": ["Tom mais institucional/corporativo"],
+        "status": "proposta"
+      }
+    },
+    {
+      "tipo": "paleta",
+      "fundo": "claro",
+      "natureza": "fato",
+      "label": "Cores",
+      "titulo": "Azul e grafite:\nconfiança que se vê.",
+      "lead": "Uma paleta sóbria e moderna, o azul da confiança sobre a base escura que dá seriedade e contraste. Cores amostradas por pixel do logo oficial.",
+      "cores": [
+        { "nome": "Grafite", "hex": "#0F1B24", "uso": "Base / fundo" },
+        { "nome": "Superfície", "hex": "#16262F", "uso": "Cards / superfícies" },
+        { "nome": "Azul CS", "hex": "#38B8D8", "uso": "Destaque / CTA / o monograma" },
+        { "nome": "Azul Claro", "hex": "#7FD3E8", "uso": "Apoio / degradê" },
+        { "nome": "Azul Ocean", "hex": "#0070B8", "uso": "Acento profundo / faixa" },
+        { "nome": "Branco", "hex": "#F8F8F8", "uso": "Texto sobre escuro" }
+      ],
+      "consultoria": {
+        "recomendacao": "Manter azul + grafite (cores amostradas da logo)",
+        "porque": "A paleta já existe e comunica confiança e competência, os atributos-chave de uma administradora. Recomendação é MANTER.",
+        "alternativas": [],
+        "status": "aprovado"
+      }
+    },
+    {
+      "tipo": "tipografia",
+      "fundo": "pattern",
+      "natureza": "consultoria",
+      "label": "Tipografia",
+      "titulo": "Forte no título,\nclara no texto.",
+      "display_nome": "Questrial",
+      "amostra": "Questrial, geométrica larga e limpa, é a fonte própria da marca para títulos do sistema, escolhida por ser o equivalente livre mais fiel ao Century Gothic do wordmark do logo; Inter, neutra e altamente legível, é usada no corpo. O lettering da assinatura CS é exclusivo da logo original e nunca deve ser recriado com uma fonte de apoio.",
+      "consultoria": {
+        "recomendacao": "Questrial (títulos do sistema) + Inter (corpo)",
+        "porque": "Pesquisa de mercado (12/07): Questrial é a alternativa livre mais fiel ao Century Gothic do wordmark, mantém a marca coesa do símbolo à legenda e passa modernidade/limpeza, o que o mercado de gestão e imobiliário associa a profissionalismo. Ambas OFL, self-hosted (fontes próprias da marca).",
+        "alternativas": ["Montserrat (display) + Lora (corpo serifado, mais tradicional)", "Sora + IBM Plex Sans (gestão digital)"],
+        "status": "aprovado"
+      }
+    },
+    {
+      "tipo": "marcas",
+      "fundo": "escuro",
+      "natureza": "fato",
+      "label": "A marca",
+      "titulo": "Logo, selo\ne assinatura.",
+      "logos": [
+        { "src": "../assets/brand/logo/cs-simbolo-branco.png", "bg": "#0F1B24" },
+        { "src": "../assets/brand/logo/cs-simbolo-azul.png", "bg": "#EAF6FB" },
+        { "src": "../assets/brand/logo/cs-avatar.jpg", "bg": "#16262F" }
+      ]
+    },
+    {
+      "tipo": "somos-nao",
+      "fundo": "claro",
+      "natureza": "consultoria",
+      "label": "Fotografia",
+      "titulo": "Como a CS\nse mostra.",
+      "lead": "A imagem é tão da marca quanto o logo. Carlos em campo, prédios reais da região, gestão em ação: rosto que dá confiança.",
+      "esquerda": {
+        "titulo": "Buscamos",
+        "itens": ["Carlos presente e acessível", "Prédios e áreas comuns reais", "Postura profissional e próxima", "Luz natural, tom editorial", "Documento/contas quando fizer sentido"]
+      },
+      "direita": {
+        "titulo": "Evitamos",
+        "itens": ["Prédio genérico de banco de imagem", "Executivo de gravata sorrindo à toa", "Fotos frias e impessoais", "Cores fora da paleta", "Promessa vazia sem prova"]
+      },
+      "grade_fotos": [
+        "../assets/drive/ensaio/ensaio-002.jpg",
+        "../assets/drive/ensaio/ensaio-005.jpg",
+        "../assets/drive/ensaio/ensaio-012.jpg",
+        "../assets/drive/ensaio/ensaio-018.jpg",
+        "../assets/drive/ensaio/ensaio-020.jpg",
+        "../assets/drive/ensaio/ensaio-025.jpg"
+      ],
+      "consultoria": {
+        "recomendacao": "Direção 'Carlos presente, prédios reais, gestão em ação'",
+        "porque": "O rosto do síndico profissional é o principal ativo de confiança. Foto real com Carlos comunica presença melhor que prédio genérico.",
+        "alternativas": ["Direção mais gráfica/institucional (sem pessoas)"],
+        "status": "proposta"
+      }
+    },
+    {
+      "tipo": "templates",
+      "fundo": "acento",
+      "natureza": "consultoria",
+      "label": "Templates de conteúdo",
+      "titulo": "A marca\nno Instagram.",
+      "lead": "Modelos de post e story que mantêm a CS reconhecível em qualquer feed. Base escura, azul no destaque, contato sempre @carlossilvaadm.",
+      "grupos": [
+        {
+          "nome": "Feed",
+          "imgs": ["../assets/drive/pecas/pecas-001.jpg", "../assets/drive/pecas/pecas-002.jpg", "../assets/drive/pecas/pecas-003.jpg"]
+        },
+        {
+          "nome": "Stories",
+          "imgs": ["../assets/drive/pecas/pecas-004.jpg", "../assets/drive/pecas/pecas-005.jpg", "../assets/drive/pecas/pecas-006.jpg"]
+        }
+      ],
+      "consultoria": {
+        "recomendacao": "Sistema de templates grafite + azul, contato padronizado",
+        "porque": "Consistência visual constrói reconhecimento no feed; padronizar o contato (@carlossilvaadm) evita ruído. Segue o padrão editorial dos portais Fenice.",
+        "alternativas": ["Templates mais claros/minimalistas"],
+        "status": "proposta"
+      }
+    }
+  ]
+}
