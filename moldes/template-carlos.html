@@ -106,7 +106,8 @@
       if(!p) return;
       const bg=(d.fundos&&d.fundos[p.fundo])||p.fundo||'';
       document.getElementById('bg').style.backgroundImage="url('"+bg+"')";
-      document.getElementById('foto').src=p.foto||'';
+      if(p.foto){ document.getElementById('foto').src=p.foto; }
+      else { document.querySelector('.person').style.display='none'; document.getElementById('art').classList.add('cenario'); }
       document.getElementById('eyebrow').textContent=p.eyebrow||'';
       document.getElementById('titulo').innerHTML=esc(p.titulo)+(p.titulo_destaque?' <span class="hi">'+esc(p.titulo_destaque)+'</span>':'');
       document.getElementById('corpo').innerHTML=p.corpo||'';
