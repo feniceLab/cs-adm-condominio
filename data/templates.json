@@ -28,14 +28,14 @@
       "eyebrow": "Informativo",
       "titulo": "Fundo de reserva:", "titulo_destaque": "por que ele importa.",
       "corpo": "É a poupança do condomínio pra emergências e obras grandes. Bem gerido, evita rateio de surpresa e mantém o prédio em dia.",
-      "cta": "Saiba mais comigo", "foto": "../assets/templates/cutout/ensaio-030.png", "fundo": "predio-1"
+      "cta": "Saiba mais comigo", "foto": "../assets/templates/cutout/ensaio-020.png", "fundo": "predio-1"
     },
     {
       "id": "area-comum", "formato": "feed",
       "eyebrow": "Valorização",
       "titulo": "Área comum bem cuidada", "titulo_destaque": "valoriza o seu imóvel.",
       "corpo": "Portaria, salão, playground e academia em ordem fazem o condomínio valer mais e morar melhor. A CS cuida disso por você.",
-      "cta": "Fale comigo no WhatsApp", "foto": "../assets/templates/cutout/ensaio-025.png", "fundo": "predio-2"
+      "cta": "Fale comigo no WhatsApp", "foto": "../assets/templates/cutout/ensaio-012.png", "fundo": "predio-2"
     },
     {
       "id": "segredo", "formato": "story",
@@ -56,14 +56,14 @@
       "eyebrow": "Fica a dica",
       "titulo": "Seu condomínio precisa de um", "titulo_destaque": "síndico profissional?",
       "corpo": "Contas atrasadas, assembleia vazia e reclamação sem resposta são sinais de que é hora de profissionalizar a gestão.",
-      "cta": "Fale comigo no WhatsApp", "foto": "../assets/templates/cutout/ensaio-030.png", "fundo": "predio-1"
+      "cta": "Fale comigo no WhatsApp", "foto": "../assets/templates/cutout/ensaio-015.png", "fundo": "predio-1"
     },
     {
       "id": "o-que-muda", "formato": "story",
       "eyebrow": "Antes e depois",
       "titulo": "O que muda quando", "titulo_destaque": "a CS assume.",
       "corpo": "Conta clara todo mês, prazos cumpridos e um síndico presente que resolve. Tranquilidade pra quem mora.",
-      "cta": "Fale comigo no WhatsApp", "foto": "../assets/templates/cutout/ensaio-025.png", "fundo": "predio-2"
+      "cta": "Fale comigo no WhatsApp", "foto": "../assets/templates/cutout/ensaio-012.png", "fundo": "predio-2"
     },
     {
       "id": "institucional", "formato": "story",
