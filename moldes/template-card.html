@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CS · Carrossel (cards claros)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Questrial&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{--azul:#38B8D8;--ocean:#0070B8;--grafite:#0F1B24;--card:#F2F5F8;--tinta:#0F1B24;--muted:#5B6B75;--fd:'Questrial',sans-serif;--fc:'Inter',sans-serif}
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:#0b1116;display:flex;justify-content:center;padding:24px;font-family:var(--fc)}
+  .frame{transform-origin:top center;transform:scale(.5)}
+  body.render{padding:0;background:none}
+  body.render .frame{transform:none}
+
+  .art{position:relative;overflow:hidden;background:radial-gradient(120% 90% at 80% 0,#16324a,var(--grafite))}
+  .art.feed{width:1080px;height:1350px}
+  .art.square{width:1080px;height:1080px}
+  .wm{position:absolute;right:-140px;top:50%;transform:translateY(-50%);width:900px;opacity:.07;pointer-events:none}
+
+  .card{position:absolute;inset:64px;background:var(--card);border-radius:30px;overflow:hidden;box-shadow:0 44px 90px -34px rgba(0,0,0,.65)}
+  /* faixa azul lateral */
+  .card .stripe{position:absolute;left:0;top:0;bottom:0;width:20px;background:linear-gradient(180deg,var(--azul),var(--ocean))}
+  /* canto grafite */
+  .card::after{content:'';position:absolute;right:-2px;bottom:-2px;border-style:solid;border-width:0 0 170px 170px;border-color:transparent transparent var(--grafite) transparent}
+  .card .cardwm{position:absolute;right:6px;bottom:1px;width:120px;opacity:.9;z-index:4;filter:brightness(0) invert(1)}
+  /* numero gigante fantasma */
+  .bignum{position:absolute;right:40px;top:20px;font-family:var(--fd);font-size:560px;line-height:1;color:var(--azul);opacity:.1;z-index:1;pointer-events:none}
+
+  .inner{position:absolute;inset:0;padding:104px 92px 96px;display:flex;flex-direction:column;z-index:2}
+  .tab{align-self:flex-start;background:var(--grafite);color:#fff;font-family:var(--fc);font-weight:800;font-size:32px;letter-spacing:.05em;text-transform:uppercase;padding:15px 32px;border-radius:8px}
+  .tab .n{color:var(--azul)}
+  .kicker{font-family:var(--fc);font-weight:700;font-size:27px;letter-spacing:.24em;text-transform:uppercase;color:var(--ocean)}
+  h1{font-family:var(--fd);color:var(--tinta);line-height:1.03;letter-spacing:-.5px}
+  .art.feed h1{font-size:96px}.art.square h1{font-size:76px}
+  .titulo-dica{font-family:var(--fd);color:var(--tinta);font-size:74px;line-height:1.04;margin-top:30px}
+  .rule{width:96px;height:8px;background:linear-gradient(90deg,var(--azul),var(--ocean));border-radius:6px;margin-top:26px}
+  .sub{font-family:var(--fc);font-size:35px;line-height:1.5;color:var(--muted);margin-top:28px;max-width:600px}
+  .texto{font-family:var(--fc);font-size:39px;line-height:1.5;color:#33424C;margin-top:26px;max-width:600px}
+  .texto b{color:var(--tinta);font-weight:700}
+  .spacer{flex:1}
+  .cta{align-self:flex-start;background:var(--azul);color:var(--grafite);font-family:var(--fc);font-weight:700;font-size:35px;padding:24px 46px;border-radius:999px}
+
+  .foot{display:flex;align-items:center;gap:18px;z-index:3}
+  .foot img{height:72px;width:auto}
+  .foot .h{font-family:var(--fc);font-weight:700;font-size:29px;color:var(--tinta);line-height:1.2}
+  .foot .h span{display:block;font-weight:500;font-size:24px;color:var(--ocean)}
+  .count{position:absolute;top:118px;right:104px;font-family:var(--fc);font-weight:800;font-size:30px;color:var(--muted);z-index:3}
+  .swipe{position:absolute;bottom:130px;right:150px;font-family:var(--fc);font-weight:700;font-size:27px;color:var(--ocean);z-index:3}
+  /* Carlos recortado na capa/cta */
+  .carlos{position:absolute;right:-80px;bottom:0;height:820px;z-index:2;filter:drop-shadow(-20px 12px 30px rgba(0,0,0,.28))}
+  .inner.tem-carlos{padding-right:490px}
+  .art.feed .inner.tem-carlos h1{font-size:80px}
+  .inner.tem-carlos .texto,.inner.tem-carlos .sub{max-width:400px}
+</style>
+</head>
+<body>
+  <div class="frame">
+  <div class="art feed" id="art">
+    <img class="wm" src="../assets/brand/logo/cs-simbolo-branco.png" alt="">
+    <div class="card">
+      <div class="stripe"></div>
+      <div class="bignum" id="bignum"></div>
+      <img class="cardwm" src="../assets/brand/logo/cs-simbolo-preto.png" alt="">
+      <div class="count" id="count"></div>
+      <img class="carlos" id="carlos" src="" alt="" style="display:none">
+      <div class="inner" id="inner"></div>
+      <div class="swipe" id="swipe"></div>
+    </div>
+  </div>
+  </div>
+  <script>
+    const q=new URLSearchParams(location.search);
+    const fmt=q.get('fmt')||'feed';
+    const cid=q.get('carrossel')||'assembleia';
+    const sIdx=parseInt(q.get('slide')||'0',10);
+    document.getElementById('art').className='art '+fmt;
+    if(q.has('r')) document.body.classList.add('render');
+    const E=s=>String(s==null?'':s);
+    const foot=`<div class="foot"><img src="../assets/brand/logo/cs-simbolo-preto.png" alt="CS"><div class="h">CS Administradora<span>@carlossilvaadm</span></div></div>`;
+    fetch('../data/carrosseis.json',{cache:'no-store'}).then(r=>r.json()).then(d=>{
+      const c=(d.carrosseis||[]).find(x=>x.id===cid)||(d.carrosseis||[])[0];
+      const slides=c.slides||[]; const s=slides[sIdx]||slides[0];
+      document.getElementById('count').textContent=(sIdx+1)+'/'+slides.length;
+      const ultimo=sIdx===slides.length-1;
+      document.getElementById('swipe').textContent=(s.tipo==='dica' && !ultimo)?'arraste →':'';
+      const inner=document.getElementById('inner');
+      const carlos=document.getElementById('carlos');
+      const bignum=document.getElementById('bignum');
+      let html='';
+      if(s.tipo==='capa'){
+        carlos.src='../assets/templates/cutout/ensaio-020.png'; carlos.style.display='block';
+        inner.classList.add('tem-carlos');
+        html=`${s.kicker?`<div class="kicker">${E(s.kicker)}</div>`:''}<h1 style="margin-top:22px">${E(s.titulo)}</h1><div class="rule"></div>${s.sub?`<p class="sub">${E(s.sub)}</p>`:''}<div class="spacer"></div>${foot}`;
+      } else if(s.tipo==='dica'){
+        const num=(E(s.tab).match(/\d+/)||[''])[0];
+        bignum.textContent=num;
+        html=`<div class="tab">${E(s.tab).replace(/(\d+)/,'<span class="n">$1</span>')}</div><div class="titulo-dica">${E(s.titulo)}</div><div class="rule"></div><p class="texto">${E(s.texto)}</p><div class="spacer"></div>${foot}`;
+      } else if(s.tipo==='cta'){
+        carlos.src='../assets/templates/cutout/ensaio-020.png'; carlos.style.display='block';
+        inner.classList.add('tem-carlos');
+        html=`<div class="tab">Fale com a CS</div><div class="titulo-dica">${E(s.titulo)}</div><div class="rule"></div><p class="texto">${E(s.texto)}</p><div class="spacer"></div>${foot}`;
+      }
+      inner.innerHTML=html;
+      document.title='CS · '+cid+' · slide '+(sIdx+1)+' · '+fmt;
+    });
+  </script>
+</body>
+</html>

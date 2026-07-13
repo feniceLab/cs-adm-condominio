@@ -266,22 +266,26 @@
       "natureza": "consultoria",
       "label": "Templates de conteúdo",
       "titulo": "A marca\nno Instagram.",
-      "lead": "Modelos de post e story que mantêm a CS reconhecível em qualquer feed. Base escura, azul no destaque, contato sempre @carlossilvaadm.",
+      "lead": "Modelos de post prontos, gerados a partir das fotos do Carlos e da marca CS. Modelo 1 (cenário) pra feed e story; Modelo 2 (cards claros) pra carrossel. Contato sempre @carlossilvaadm.",
       "grupos": [
         {
           "nome": "Feed",
-          "imgs": ["../assets/drive/pecas/pecas-001.jpg", "../assets/drive/pecas/pecas-002.jpg", "../assets/drive/pecas/pecas-003.jpg"]
+          "imgs": ["../assets/templates/render/m1-feed.png", "../assets/templates/render/feed-case.png", "../assets/templates/render/feed-fundo.png", "../assets/templates/render/feed-area.png"]
         },
         {
           "nome": "Stories",
-          "imgs": ["../assets/drive/pecas/pecas-004.jpg", "../assets/drive/pecas/pecas-005.jpg", "../assets/drive/pecas/pecas-006.jpg"]
+          "imgs": ["../assets/templates/render/m1-story.png", "../assets/templates/render/story-segredo.png", "../assets/templates/render/story-unico.png", "../assets/templates/render/story-sinais.png", "../assets/templates/render/story-muda.png", "../assets/templates/render/story-institucional.png"]
+        },
+        {
+          "nome": "Carrossel",
+          "imgs": ["../assets/templates/render/carrossel-capa.png", "../assets/templates/render/carrossel-dica.png", "../assets/templates/render/carrossel-cta.png"]
         }
       ],
       "consultoria": {
-        "recomendacao": "Sistema de templates grafite + azul, contato padronizado",
-        "porque": "Consistência visual constrói reconhecimento no feed; padronizar o contato (@carlossilvaadm) evita ruído. Segue o padrão editorial dos portais Fenice.",
+        "recomendacao": "Modelo 1 (Carlos no cenário) + Modelo 2 (cards claros) + contato padronizado",
+        "porque": "Dois modelos data-driven cobrem post único e carrossel mantendo a CS reconhecível. Padronizar o contato (@carlossilvaadm) evita ruído. Segue o padrão editorial dos portais Fenice.",
         "alternativas": ["Templates mais claros/minimalistas"],
-        "status": "proposta"
+        "status": "aprovado"
       }
     }
   ]

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CS · Story 1080×1920</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Questrial&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{--azul:#38B8D8;--ocean:#0070B8;--grafite:#0F1B24;--branco:#F8F8F8;--fd:'Questrial',sans-serif;--fc:'Inter',sans-serif;
+        /* margens de segurança oficiais do Instagram Story (1080x1920) */
+        --safe-top:230px; --safe-bottom:320px; --safe-x:96px;}
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:#0b1116;display:flex;justify-content:center;padding:24px;font-family:var(--fc)}
+  .frame{transform-origin:top center;transform:scale(.42)}
+  /* modo render: tamanho real 1080x1920 sem margem (add ?r=1 na URL) */
+  body.render{padding:0;background:none}
+  body.render .frame{transform:none}
+  /* moldura STORY exata 1080x1920 */
+  .story{position:relative;width:1080px;height:1920px;overflow:hidden;background:var(--grafite);border-radius:4px}
+  .bg{position:absolute;inset:0;background-size:cover;background-position:center right}
+  /* véu de legibilidade: grafite na esquerda, abre pra direita; escurece o rodapé */
+  .veil{position:absolute;inset:0;background:
+     linear-gradient(90deg, rgba(15,27,36,.97) 0%, rgba(15,27,36,.9) 34%, rgba(15,27,36,.4) 58%, rgba(15,27,36,.05) 82%, rgba(15,27,36,0) 100%),
+     linear-gradient(180deg, rgba(15,27,36,.5) 0%, rgba(15,27,36,0) 20%, rgba(15,27,36,0) 55%, rgba(15,27,36,.85) 100%)}
+  .accent{position:absolute;left:0;top:0;bottom:0;width:14px;background:linear-gradient(180deg,var(--azul),var(--ocean))}
+
+  /* PESSOA: coluna direita, NÃO invade o texto (que fica só na esquerda) */
+  .person{position:absolute;right:0;bottom:0;width:760px;height:1600px;z-index:2;overflow:hidden}
+  .person img{position:absolute;right:-330px;bottom:0;height:1500px;width:auto;object-position:bottom right;
+     filter:drop-shadow(-30px 18px 46px rgba(0,0,0,.6))}
+
+  /* TEXTO: preso à esquerda, largura limitada (never overlaps a pessoa) */
+  .content{position:absolute;left:var(--safe-x);top:var(--safe-top);width:440px;z-index:3}
+  .eyebrow{display:inline-flex;align-items:center;gap:16px;font-family:var(--fc);font-weight:700;font-size:25px;letter-spacing:.26em;text-transform:uppercase;color:var(--azul)}
+  .eyebrow::before{content:'';width:50px;height:3px;background:var(--azul)}
+  h1{font-family:var(--fd);font-size:86px;line-height:1.03;color:var(--branco);margin-top:30px;letter-spacing:-1px}
+  h1 .hi{color:var(--azul)}
+  .body{font-family:var(--fc);font-weight:400;font-size:34px;line-height:1.5;color:#DCE6EC;margin-top:36px}
+  .body b{color:#fff;font-weight:700}
+  .cta{margin-top:40px;display:inline-flex;align-items:center;gap:14px;background:var(--azul);color:var(--grafite);font-family:var(--fc);font-weight:700;font-size:30px;padding:22px 42px;border-radius:999px}
+
+  /* MARCA: rodapé esquerdo, dentro da área segura (acima da barra de resposta do IG) */
+  .brand{position:absolute;left:var(--safe-x);bottom:var(--safe-bottom);display:flex;align-items:center;gap:20px;z-index:3}
+  .brand img{height:88px;width:auto;filter:drop-shadow(0 2px 10px rgba(0,0,0,.5))}
+  .brand .h{font-family:var(--fc);font-weight:600;font-size:28px;color:#fff;line-height:1.25}
+  .brand .h span{display:block;font-weight:400;font-size:23px;color:var(--azul);letter-spacing:.04em}
+
+  /* guias de área segura (só na prévia; some no PNG final) */
+  .safe{position:absolute;left:0;right:0;pointer-events:none;z-index:5}
+  .safe.t{top:0;height:var(--safe-top);background:repeating-linear-gradient(45deg,rgba(255,80,80,.06) 0 14px,transparent 14px 28px);border-bottom:1px dashed rgba(255,90,90,.35)}
+  .safe.b{bottom:0;height:var(--safe-bottom);background:repeating-linear-gradient(45deg,rgba(255,80,80,.06) 0 14px,transparent 14px 28px);border-top:1px dashed rgba(255,90,90,.35)}
+  .safe span{position:absolute;left:50%;transform:translateX(-50%);font:600 20px var(--fc);color:rgba(255,120,120,.7);letter-spacing:.14em;text-transform:uppercase}
+  .safe.t span{bottom:8px}.safe.b span{top:8px}
+</style>
+</head>
+<body>
+  <div class="frame">
+  <div class="story">
+    <div class="bg" style="background-image:url('https://d8j0ntlcm91z4.cloudfront.net/user_3EJRw1x0sjC1KNGTwn6bwxcrsQM/hf_20260713_000504_28cf26ab-8bf5-4ae8-8722-4bae88f6fe6b.png')"></div>
+    <div class="veil"></div>
+    <div class="accent"></div>
+
+    <div class="person">
+      <img src="../assets/templates/cutout/ensaio-015.png" alt="Carlos Silva">
+    </div>
+
+    <div class="content">
+      <div class="eyebrow">CS Administradora</div>
+      <h1>Seu condomínio bem administrado, <span class="hi">sem surpresas.</span></h1>
+      <p class="body">Gestão financeira, administrativa e jurídica eficiente, sem cobranças inesperadas. Com a <b>CS</b>, você tem tranquilidade o ano todo.</p>
+      <div class="cta">Fale comigo no WhatsApp</div>
+    </div>
+
+    <div class="brand">
+      <img src="../assets/brand/logo/cs-simbolo-branco.png" alt="CS">
+      <div class="h">CS Administradora<span>@carlossilvaadm</span></div>
+    </div>
+
+  </div>
+  </div>
+  <script>if(location.search.includes('r=1'))document.body.classList.add('render');</script>
+</body>
+</html>

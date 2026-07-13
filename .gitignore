@@ -13,3 +13,5 @@ node_modules/
 brand-analise/
 *.backup-*.json
 scratchpad/
+.venv-cutout/
+saida/

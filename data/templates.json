@@ -1,0 +1,76 @@
+{
+  "_doc": "Modelos de peça da CS (feed 1080x1350, quadrado 1080x1080, story 1080x1920). Cada item = uma peça. Trocar aqui (texto + foto + fundo) gera a peça nos 3 formatos pelo molde moldes/template-carlos.html?piece=<id>&fmt=<feed|square|story>. Zero travessão.",
+  "fundos": {
+    "predio-1": "https://d8j0ntlcm91z4.cloudfront.net/user_3EJRw1x0sjC1KNGTwn6bwxcrsQM/hf_20260713_000504_28cf26ab-8bf5-4ae8-8722-4bae88f6fe6b.png",
+    "predio-2": "https://d8j0ntlcm91z4.cloudfront.net/user_3EJRw1x0sjC1KNGTwn6bwxcrsQM/hf_20260713_000504_0b49f4ff-9527-4788-a20e-eb225356366a.png"
+  },
+  "pecas": [
+    {
+      "id": "administrada",
+      "modelo": "Modelo 1 · Carlos no cenário",
+      "eyebrow": "CS Administradora",
+      "titulo": "Seu condomínio bem administrado,",
+      "titulo_destaque": "sem surpresas.",
+      "corpo": "Gestão financeira, administrativa e jurídica eficiente, sem cobranças inesperadas. Com a <b>CS</b>, você tem tranquilidade o ano todo.",
+      "cta": "Fale comigo no WhatsApp",
+      "foto": "../assets/templates/cutout/ensaio-015.png",
+      "fundo": "predio-1"
+    },
+    {
+      "id": "case-manutencao", "formato": "feed",
+      "eyebrow": "Manutenção",
+      "titulo": "Problema resolvido rápido,", "titulo_destaque": "sem virar prejuízo.",
+      "corpo": "Vazamento, elevador parado, portão quebrado. A CS aciona, acompanha e resolve antes de virar dor de cabeça pro morador.",
+      "cta": "Fale comigo no WhatsApp", "foto": "../assets/templates/cutout/ensaio-020.png", "fundo": "predio-2"
+    },
+    {
+      "id": "fundo-reserva", "formato": "feed",
+      "eyebrow": "Informativo",
+      "titulo": "Fundo de reserva:", "titulo_destaque": "por que ele importa.",
+      "corpo": "É a poupança do condomínio pra emergências e obras grandes. Bem gerido, evita rateio de surpresa e mantém o prédio em dia.",
+      "cta": "Saiba mais comigo", "foto": "../assets/templates/cutout/ensaio-030.png", "fundo": "predio-1"
+    },
+    {
+      "id": "area-comum", "formato": "feed",
+      "eyebrow": "Valorização",
+      "titulo": "Área comum bem cuidada", "titulo_destaque": "valoriza o seu imóvel.",
+      "corpo": "Portaria, salão, playground e academia em ordem fazem o condomínio valer mais e morar melhor. A CS cuida disso por você.",
+      "cta": "Fale comigo no WhatsApp", "foto": "../assets/templates/cutout/ensaio-025.png", "fundo": "predio-2"
+    },
+    {
+      "id": "segredo", "formato": "story",
+      "eyebrow": "Gestão condominial",
+      "titulo": "O segredo de uma boa", "titulo_destaque": "gestão de condomínio.",
+      "corpo": "Não é sorte: é método, transparência e alguém que responde. A CS junta os três.",
+      "cta": "Fale comigo no WhatsApp", "foto": "../assets/templates/cutout/ensaio-015.png", "fundo": "predio-1"
+    },
+    {
+      "id": "unico-gestor", "formato": "story",
+      "eyebrow": "Síndico profissional",
+      "titulo": "Tudo em um", "titulo_destaque": "único gestor.",
+      "corpo": "Financeiro, jurídico, manutenção e assembleias na mão de quem entende. Menos preocupação pro condômino.",
+      "cta": "Fale comigo no WhatsApp", "foto": "../assets/templates/cutout/ensaio-020.png", "fundo": "predio-2"
+    },
+    {
+      "id": "sinais", "formato": "story",
+      "eyebrow": "Fica a dica",
+      "titulo": "Seu condomínio precisa de um", "titulo_destaque": "síndico profissional?",
+      "corpo": "Contas atrasadas, assembleia vazia e reclamação sem resposta são sinais de que é hora de profissionalizar a gestão.",
+      "cta": "Fale comigo no WhatsApp", "foto": "../assets/templates/cutout/ensaio-030.png", "fundo": "predio-1"
+    },
+    {
+      "id": "o-que-muda", "formato": "story",
+      "eyebrow": "Antes e depois",
+      "titulo": "O que muda quando", "titulo_destaque": "a CS assume.",
+      "corpo": "Conta clara todo mês, prazos cumpridos e um síndico presente que resolve. Tranquilidade pra quem mora.",
+      "cta": "Fale comigo no WhatsApp", "foto": "../assets/templates/cutout/ensaio-025.png", "fundo": "predio-2"
+    },
+    {
+      "id": "institucional", "formato": "story",
+      "eyebrow": "Prazer, sou o Carlos",
+      "titulo": "Cuido do", "titulo_destaque": "seu patrimônio.",
+      "corpo": "Carlos Silva, síndico profissional. Administro condomínios com seriedade, método e presença de verdade.",
+      "cta": "Fale comigo no WhatsApp", "foto": "../assets/templates/cutout/ensaio-020.png", "fundo": "predio-1"
+    }
+  ]
+}

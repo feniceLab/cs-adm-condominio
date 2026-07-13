@@ -1,0 +1,30 @@
+{
+  "_doc": "Carrosséis da CS (Modelo 2 · cards claros com aba preta + marca d'água CS). Cada carrossel = lista de slides. Render: moldes/template-card.html?carrossel=<id>&slide=<n>&fmt=<feed|square>. Zero travessão. Copy real, sem inventar dado do cliente.",
+  "carrosseis": [
+    {
+      "id": "assembleia",
+      "titulo_interno": "5 dicas para uma assembleia mais produtiva",
+      "slides": [
+        { "tipo": "capa", "kicker": "Gestão condominial", "titulo": "5 dicas para uma assembleia mais produtiva", "sub": "Reunião de condomínio não precisa virar bate-boca. Arrasta pro lado." },
+        { "tipo": "dica", "tab": "Dica 1", "titulo": "Mande a pauta antes", "texto": "Todo mundo chega sabendo o que vai ser decidido. A reunião rende e ninguém é pego de surpresa." },
+        { "tipo": "dica", "tab": "Dica 2", "titulo": "Dê um tempo por assunto", "texto": "Definir quanto tempo cada tema tem evita a discussão que não acaba e mantém o foco." },
+        { "tipo": "dica", "tab": "Dica 3", "titulo": "Leve os números prontos", "texto": "Prestação de contas clara na tela corta a desconfiança e acelera a aprovação." },
+        { "tipo": "dica", "tab": "Dica 4", "titulo": "Registre tudo em ata", "texto": "O que foi decidido passa a valer pra todos, sem o famoso 'mas eu não sabia'." },
+        { "tipo": "dica", "tab": "Dica 5", "titulo": "Conduza com firmeza e respeito", "texto": "Um mediador imparcial mantém o tom e garante que todo mundo seja ouvido." },
+        { "tipo": "cta", "titulo": "Quer uma assembleia bem conduzida?", "texto": "A CS conduz a reunião do seu condomínio com método e transparência.", "cta": "Fale comigo no WhatsApp" }
+      ]
+    },
+    {
+      "id": "convivencia",
+      "titulo_interno": "Dicas de convivência: harmonia entre vizinhos",
+      "slides": [
+        { "tipo": "capa", "kicker": "Convivência", "titulo": "Como manter a harmonia entre vizinhos", "sub": "Condomínio bom de morar é feito de acordo. Arrasta pro lado." },
+        { "tipo": "dica", "tab": "Dica 1", "titulo": "Respeite o horário de silêncio", "texto": "Barulho tem hora. Combinar e cumprir o regimento evita 90% dos atritos." },
+        { "tipo": "dica", "tab": "Dica 2", "titulo": "Use as áreas comuns com cuidado", "texto": "Deixar o espaço como você gostaria de encontrar é o básico do bom vizinho." },
+        { "tipo": "dica", "tab": "Dica 3", "titulo": "Resolva no diálogo primeiro", "texto": "Antes da reclamação formal, uma conversa direta e educada costuma resolver." },
+        { "tipo": "dica", "tab": "Dica 4", "titulo": "Conheça o regimento interno", "texto": "As regras existem pra todos. Saber o que pode e o que não pode evita conflito." },
+        { "tipo": "cta", "titulo": "Conflito que não resolve?", "texto": "A CS ajuda a mediar e a manter a boa convivência no seu condomínio.", "cta": "Fale comigo no WhatsApp" }
+      ]
+    }
+  ]
+}
